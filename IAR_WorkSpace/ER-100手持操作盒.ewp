@@ -397,7 +397,7 @@
         </option>
         <option>
           <name>newCCIncludePaths</name>
-          <state>$PROJ_DIR$\..\APP</state>
+          <state>$PROJ_DIR$\..</state>
           <state>$PROJ_DIR$\..\Doc</state>
           <state>$PROJ_DIR$\..\Drv\TIME</state>
           <state>$PROJ_DIR$\..\Drv\UART</state>
@@ -2018,10 +2018,10 @@
       <name>$PROJ_DIR$\..\APP\Config.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\APP\main.c</name>
+      <name>$PROJ_DIR$\..\main.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\APP\User_Modbus_API.c</name>
+      <name>$PROJ_DIR$\..\User_Modbus_API.c</name>
     </file>
   </group>
   <group>
