@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>3462722974</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\APP\main.c</file>
+      <file>$PROJ_DIR$\..\APP\User_Modbus_API.c</file>
+      <file>$PROJ_DIR$\..\APP\Config.h</file>
+      <file>$PROJ_DIR$\Debug\List\tasks.lst</file>
+      <file>$PROJ_DIR$\..\APP\User_Modbus_API.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\User_Modbus_API.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\User_SYS_API.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\User_SYS_API.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\tasks.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\DAC.pbi</file>
+      <file>$PROJ_DIR$\Debug\Exe\FreeRTOS.d90</file>
+      <file>$PROJ_DIR$\Debug\List\porttimer.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\portmacro.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\tasks.pbi</file>
+      <file>$PROJ_DIR$\..\Modbus\port\inc\port.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\DAC.r90</file>
+      <file>$PROJ_DIR$\..\Modbus\include\mbframe.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdarg.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\portevent.r90</file>
+      <file>$PROJ_DIR$\Debug\List\main.lst</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\include\StackMacros.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\list.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\queue.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\FreeRTOS.map</file>
+      <file>$PROJ_DIR$\Debug\List\mbfuncholding.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\ADC.r90</file>
+      <file>$TOOLKIT_DIR$\inc\iopwm316.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\portserial.r90</file>
+      <file>$PROJ_DIR$\Debug\Exe\FreeRTOS.eep</file>
+      <file>$PROJ_DIR$\Debug\Obj\heap_1.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\ADC.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbrtu.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\IO_Port.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\portevent.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\mbfunccoils.lst</file>
+      <file>$PROJ_DIR$\..\Modbus\include\mbconfig.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\include\timers.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\porttimer.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r90</file>
+      <file>$TOOLKIT_DIR$\inc\bitdefinitions\iopwm316.inc</file>
+      <file>$PROJ_DIR$\Debug\Obj\portserial.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\heap_1.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stddef.h</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\include\mpu_wrappers.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\list.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\port.pbi</file>
+      <file>$PROJ_DIR$\..\Drv\ADC\ADC.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbutils.pbi</file>
+      <file>$PROJ_DIR$\..\Modbus\rtu\mbcrc.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\User_Modbus_API.r90</file>
+      <file>$PROJ_DIR$\..\Modbus\include\mbutils.h</file>
+      <file>$PROJ_DIR$\Debug\List\mbutils.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbutils.r90</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdlib.h</file>
+      <file>$PROJ_DIR$\..\Drv\DAC\DAC.h</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\include\FreeRTOS.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\User_SYS_API.r90</file>
+      <file>$PROJ_DIR$\Debug\List\queue.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\port.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbcrc.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\iomacro.h</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\include\projdefs.h</file>
+      <file>$PROJ_DIR$\Debug\List\portevent.lst</file>
+      <file>$TOOLKIT_DIR$\src\template\cfg3soim.xcl</file>
+      <file>$PROJ_DIR$\Debug\List\port.lst</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdio.h</file>
+      <file>$PROJ_DIR$\Debug\List\mb.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\FreeRTOS.pbd</file>
+      <file>$PROJ_DIR$\..\Modbus\include\mb.h</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\include\list.h</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\include\task.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfunccoils.pbi</file>
+      <file>$PROJ_DIR$\..\Modbus\include\mbport.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\FreeRTOS.hex</file>
+      <file>$PROJ_DIR$\Debug\Obj\mb.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbrtu.pbi</file>
+      <file>$PROJ_DIR$\..\Modbus\include\mbproto.h</file>
+      <file>$PROJ_DIR$\Debug\List\heap_1.lst</file>
+      <file>$PROJ_DIR$\..\APP\User_SYS_API.h</file>
+      <file>$PROJ_DIR$\Debug\List\mbfuncinput.lst</file>
+      <file>$PROJ_DIR$\Debug\List\portserial.lst</file>
+      <file>$PROJ_DIR$\Debug\List\mbrtu.lst</file>
+      <file>$PROJ_DIR$\Debug\List\IO_Port.lst</file>
+      <file>$PROJ_DIR$\Debug\List\DAC.lst</file>
+      <file>$PROJ_DIR$\..\Modbus\rtu\mbrtu.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\mb.pbi</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\include\queue.h</file>
+      <file>$PROJ_DIR$\Debug\List\ADC.lst</file>
+      <file>$PROJ_DIR$\Debug\List\mbcrc.lst</file>
+      <file>$PROJ_DIR$\Debug\List\list.lst</file>
+      <file>$PROJ_DIR$\Debug\List\User_Modbus_API.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\IO_Port.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncinput.pbi</file>
+      <file>$PROJ_DIR$\..\APP\User_SYS_API.c</file>
+      <file>$PROJ_DIR$\..\Doc\Default.txt</file>
+      <file>$PROJ_DIR$\..\Doc\Free Modbus.txt</file>
+      <file>$PROJ_DIR$\..\Doc\IO_Config.txt</file>
+      <file>$PROJ_DIR$\..\Drv\ADC\ADC.c</file>
+      <file>$PROJ_DIR$\..\Drv\DAC\DAC.c</file>
+      <file>$PROJ_DIR$\..\Drv\IO\IO_Port.c</file>
+      <file>$PROJ_DIR$\..\Drv\UART\portserial.c</file>
+      <file>$PROJ_DIR$\..\Drv\TIME\porttimer.c</file>
+      <file>$PROJ_DIR$\..\Modbus\mb.c</file>
+      <file>$PROJ_DIR$\..\Modbus\rtu\mbcrc.c</file>
+      <file>$PROJ_DIR$\..\Modbus\functions\mbfunccoils.c</file>
+      <file>$PROJ_DIR$\..\Modbus\functions\mbfuncholding.c</file>
+      <file>$PROJ_DIR$\..\Modbus\rtu\mbrtu.c</file>
+      <file>$PROJ_DIR$\..\Modbus\functions\mbfuncinput.c</file>
+      <file>$PROJ_DIR$\..\Modbus\functions\mbutils.c</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\FreeRTOSConfig.h</file>
+      <file>$PROJ_DIR$\..\Modbus\port\src\portevent.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncholding.r90</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\portable\MemMang\heap_1.c</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\list.c</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\portable\IAR\ATMega323\port.c</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\portable\IAR\ATMega323\portmacro.h</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\portable\IAR\ATMega323\portmacro.s90</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\queue.c</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\tasks.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\porttimer.r90</file>
+      <file>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\include\portable.h</file>
+      <file>$TOOLKIT_DIR$\src\template\cfgpwm316.xcl</file>
+      <file>$PROJ_DIR$\..\Modbus\include\mbfunc.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncholding.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbcrc.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfunccoils.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncinput.r90</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl3s-ec_mul-sf.r90</file>
+      <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
+      <file>$PROJ_DIR$\..\Drv\IO\IO_Port.H</file>
+      <file>$PROJ_DIR$\Debug\Obj\queue.r90</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\..\APP\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 19 39</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55 43 57 44 63 111 26 62 40 122 117 45 72 71 88 70 14 2 131 74 78 48 56 4 80</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 55 43 57 44 63 111 26 62 40 122 117 45 72 71 88 70 14 2 131 74 78 48 56 4 80</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\APP\User_Modbus_API.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 92 51</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4 70 14 2 26 62 40 131 74 78 52</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 4 70 14 2 26 62 40 131 74 78 52</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\FreeRTOS.d90</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 23 75 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 123 65 25 15 29 32 21 39 76 126 127 113 128 31 54 60 18 12 27 121 132 8 51 58 129</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 10 23 75 28</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\APP\User_SYS_API.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 7 58</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80 2 26 62 40 131 57 44 43 63 111 122 117 45 48 56 72 71 88</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 80 2 26 62 40 131 57 44 43 63 111 122 117 45 48 56 72 71 88</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drv\ADC\ADC.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 89 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 62 40 48 2 131</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 26 62 40 48 2 131</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drv\DAC\DAC.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 85 15</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56 26 62 40</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 56 26 62 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drv\IO\IO_Port.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 84 32</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 131 48 26 62 40</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 131 48 26 62 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drv\UART\portserial.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 82 27</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14 2 26 62 40 131 70 74 78 86</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 14 2 26 62 40 131 70 74 78 86</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drv\TIME\porttimer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 11 121</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14 2 26 62 40 131 70 74 78 86</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 14 2 26 62 40 131 70 74 78 86</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Modbus\mb.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 68 76</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14 2 26 62 40 131 70 74 78 35 16 124 86</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 14 2 26 62 40 131 70 74 78 35 16 124 86</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Modbus\rtu\mbcrc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 61</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 90 126</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14 2 26 62 40 131</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 14 2 26 62 40 131</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Modbus\functions\mbfunccoils.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 34 127</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55 43 130 14 2 26 62 40 131 70 74 78 16 35</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 55 43 130 14 2 26 62 40 131 70 74 78 16 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Modbus\functions\mbfuncholding.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 24 113</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55 43 130 14 2 26 62 40 131 70 74 78 16 35</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 55 43 130 14 2 26 62 40 131 70 74 78 16 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Modbus\rtu\mbrtu.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 77</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 83 31</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55 43 130 14 2 26 62 40 131 70 74 78 86 16 50</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 55 43 130 14 2 26 62 40 131 70 74 78 86 16 50</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Modbus\functions\mbfuncinput.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 94</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 81 128</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55 43 130 14 2 26 62 40 131 70 74 78 16 35</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 55 43 130 14 2 26 62 40 131 70 74 78 16 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Modbus\functions\mbutils.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 53 54</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55 43 130 14 2 26 62 40 131 70 74 78</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 55 43 130 14 2 26 62 40 131 70 74 78</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Modbus\port\src\portevent.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 64 18</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 70 14 2 26 62 40 131 74 78</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 70 14 2 26 62 40 131 74 78</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\portable\MemMang\heap_1.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 79 29</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55 43 57 44 63 111 26 62 40 122 117 45 72 71</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 55 43 57 44 63 111 26 62 40 122 117 45 72 71</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\list.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 91 21</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55 43 57 44 63 111 26 62 40 122 117 45 71</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 55 43 57 44 63 111 26 62 40 122 117 45 71</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\portable\IAR\ATMega323\port.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 66 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55 43 57 44 63 111 26 62 40 122 117 45 72 71</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 55 43 57 44 63 111 26 62 40 122 117 45 72 71</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\portable\IAR\ATMega323\portmacro.s90</name>
+      <outputs>
+        <tool>
+          <name>AAVR</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>AAVR</name>
+          <file> 26 62 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\queue.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 59 132</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55 43 130 57 44 63 111 26 62 40 122 117 45 72 71</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 55 43 130 57 44 63 111 26 62 40 122 117 45 72 71</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\FreeRTOS_V7.1.1\Source\tasks.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 3 8</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 67 17 43 55 130 57 44 63 111 26 62 40 122 117 45 72 71 37 20</file>
+        </tool>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 67 17 43 55 130 57 44 63 111 26 62 40 122 117 45 72 71 37 20</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

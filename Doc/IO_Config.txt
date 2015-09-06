@@ -1,0 +1,45 @@
+   
+                           端口配置
+                           
+使用系统资源：ADC --->
+                      +--  ADC6  PORTB_5 -->回烧时间
+                      +--  ADC7  PORTB_6 -->电流反馈
+                      +--  ADC8  PORTC_4 -->电压反馈
+                      +--  ADC9  PORTC_5 -->电流给定
+                      +--  ADC10 PORTC_6 -->电压给定
+                                                Total--->5 IO
+                  DAC --->
+                      +--  DAC   PORTC_7 -->送丝速度给定  
+                                                Total--->1 IO
+                  按键配置--->
+                            控制键---->
+                                  +--  INPUT PORTC_2 -->停止键 低电平为有效
+                                  +--  INPUT PORTC_3 -->启动键 高电平为有效
+                                  +--  INPUT PORTB_0 -->退丝键 高电平为有效
+                                  +--  INPUT PORTB_1 -->送丝键 高电平为有效
+                           丝径选择--->
+                                  +--  INPUT PORTD_1 -->2.4 改为慢送丝
+                                  +--  INPUT PORTD_0 -->3.2 改为引弧成功
+                                  +--  INPUT PORTC_0 -->4.0 改为LED_RED
+                                  +--  INPUT PORTC_1 -->4.8 改为LED_GREEN
+                            功能键---->
+                                  +--  INPUT PORTB_7 -->起弧方式 高电平划擦，低电平回抽 
+                                  +--  INPUT PORTD_5 -->焊接极性 高电平反极性，低电平正极性
+                                  +--  INPUT PORTD_7 -->特性选择 
+                                                Total--->11 IO
+                  控制输出--->
+                          +-- OUTPUT PORTD_2 -->收弧信号  高电平有效
+                          +-- OUTPUT PORTD_3 -->引弧成功  低电平有效
+                          +-- OUTPUT PORTD_4 -->慢送丝    高电平有效
+                          +-- OUTPUT PORTD_6 -->电源触发  高电平有效
+                          +-- OUTPUT PORTB_2 -->行走制动  低电平有效
+                          +-- OUTPUT PORTB_3 -->送丝换向  
+                          +-- OUTPUT PORTB_4 -->送丝制动  低电平刹车
+                                                Total--->7 IO
+                ALL Used --->5+1+11+7=24 IO  
+                    Rest --->24-24=0     IO
+                   /********调试期间将 慢送丝    PORTD_4-->PORTD_1
+                    //                 引弧成功  PORTD_3 -->PORTD_0 
+                    //                   TXD -->PORTD_3
+                    //                   RXD -->PORTD_4
+                   
