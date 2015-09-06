@@ -12,7 +12,7 @@ void INIT_IO(void)
 
 {
    /*lcd数据总线配置为输出端口*/
-    DDR_LCD_DB = 0xFF;
+    OUTPUT_LCD_DB(0XFF);
    /*LCD_PWM端口配置为输出状态*/
     CONFIG_PORT_OUT(DDR_LCD_PWM,LCD_PWM);
       /*LCD_RW端口配置为输出状态*/
@@ -23,6 +23,8 @@ void INIT_IO(void)
     CONFIG_PORT_OUT(DDR_LCD_E,LCD_E);
     /*573LE端口配置为输出状态*/
     CONFIG_PORT_OUT(DDR_LE,LE);
+    /*设置573LE端口为高电平*/
+    SET_LE();
    /*启动端口配置输入状态*/
     CONFIG_PORT_IN(DDR_START,START);
    /*复位端口配置输入状态*/

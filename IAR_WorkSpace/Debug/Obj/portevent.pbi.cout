@@ -30,6 +30,8 @@ E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100Handhel
 -I
 E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\FreeModbus\port\src
 -I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\Drv\74HC573
+-I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\inc\clib
@@ -61,6 +63,8 @@ E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100Handhel
 E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\FreeModbus\port
 -I
 E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\FreeModbus\port\src
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\Drv\74HC573
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -315,7 +319,7 @@ E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100Handhel
 -D__HAS_LOCATED_DECLARATION__=1
 -D__IAR_COMPILERBASE__=593417
 -D__DATE__="Sep  6 2015"
--D__TIME__="14:57:48"
+-D__TIME__="18:59:06"
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1

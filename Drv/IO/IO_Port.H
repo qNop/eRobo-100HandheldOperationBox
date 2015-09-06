@@ -40,8 +40,8 @@
 #define  CLEAR_LCD_E()               (PORT_LCD_E &= ~(1<<(LCD_E)))
 
 /*LCD_DB*/
-#define  PORT_LCD_DB                  PORTB
-#define  DDR_LCD_DB                   DDRB
+#define  OUTPUT_LCD_DB(db)             ( PORTB = db )
+#define  GET_LCD_DB()                 PORTB
 
 #define  SET_LCD_DB(data)             (PORT_LCD_DB = data) 
 
