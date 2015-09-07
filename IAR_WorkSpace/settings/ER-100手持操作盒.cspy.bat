@@ -19,6 +19,6 @@
 @REM 
 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\common\bin\cspybat" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\bin\avrproc.dll" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\bin\avrsim.dll"  %1 --plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\bin\avrlibsupportbat.dll" --backend -B "--cpu=pwm316" "--enhanced_core" "-p" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\Config\iopwm316.ddf" "--eeprom_size" "512" "-d" "sim" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\common\bin\cspybat" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\bin\avrproc.dll" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\bin\avrJtagIce-mkII.dll"  %1 --plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\bin\avrlibsupportbat.dll" --backend -B "--cpu=pwm316" "--enhanced_core" "-p" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\Config\iopwm316.ddf" "--eeprom_size" "512" "-d" "jtagIceMkII" "--jtagice_leave_timers_running" "--drv_set_putchar_breakpoint" "--drv_set_getchar_breakpoint" "--drv_communication=USB" 
 
 

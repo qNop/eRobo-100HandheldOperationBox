@@ -22,8 +22,8 @@
 #define  SET_E()          SETPIN(PORT_LCD_E,LCD_E)
 #define  CLR_E()          CLRPIN(PORT_LCD_E,LCD_E)
    
-#define  LCD_LEFT()       Sn_Output_CS(1)
-#define  LCD_RIGHT()      Sn_Output_CS(0)
+#define  LCD_LEFT()       Sn_Output_CS(0)
+#define  LCD_RIGHT()      Sn_Output_CS(1)
 
 /*
  *¶ÁÈ¡Ã¦×´Ì¬º¯Êý
@@ -114,6 +114,40 @@ Sys_Error Write_Data(unsigned char Data){
 }
 
 /*
+ *¶ÁÊý¾Ý
+ *RS:H R\W:L E:H
+ *
+ */
+unsigned char Read_Data(void){
+  unsigned char Res;
+   /*Ã¦¼ì²â*/
+  if(Lcd_GetBusy())
+  {/*Ã¦£¬ÑÓ³Ù3Fclk*/
+    Delay_us(70);
+    /*¼ì²âÃ¦*/
+    if(Lcd_GetBusy()){
+      /*Ò»Ö±Ã¦*/
+      return Sys_Lcd_Busy;
+    }
+  }
+  SET_RS();
+  SET_RW();
+  CLR_E();
+  Nop();
+  Nop();
+  LCD_DDR=0x00;
+  
+  Nop();
+  Nop();
+  SET_E();
+  Delay_us(1);
+  Res=LCD_GETSTATUS_BUSY(LCD_DB_PIN);
+  LCD_DDR=0XFF;
+  CLR_E();
+  return Res;
+}
+
+/*
  *Éè¶¨ÏÔÊ¾×ø±ê
  *
  */
@@ -146,7 +180,8 @@ Sys_Error Clr_LCD(void){
       error=Set_Cursor(x,y);
         if(error==Sys_Lcd_Busy)
           return error;
-      error=Write_Data(0x00);
+      error=Write_Data(0x01);
+         Read_Data();
         if(error==Sys_Lcd_Busy);
           return error;
     }
@@ -166,6 +201,8 @@ Sys_Error LCD_Init(void){
   LCD_RIGHT();
   error=Write_Cmd(LCD_DISPLAYSTARTLINE(0));
   error=Write_Cmd(LCD_DISPLAY_ON);
+  error=Clr_LCD();
+  
   return error;
 }
 

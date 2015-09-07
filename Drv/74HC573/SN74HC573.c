@@ -12,8 +12,6 @@ unsigned char Sn_Get_Data()
 
 void Sn_Output_KeyCode(unsigned char KeyCode)
 {
-  unsigned char temp;
-  temp = GET_LCD_DB();
   /*存储相应状态*/
   Sn74hc573_Data |= (KeyCode<<2);
   /*LE输出高电平*/
@@ -23,22 +21,20 @@ void Sn_Output_KeyCode(unsigned char KeyCode)
   SET_LE();
   Delay_us(1);
   CLEAR_LE();
-  /**/
-  OUTPUT_LCD_DB(temp);
+
 }
 
 void Sn_Output_CS(unsigned char bit)
 {
-  unsigned char temp;
-  temp = GET_LCD_DB();
+  
   /*LCD片选左半部分 CS1 0 CS2 1*/
   if(bit){
      /*存储相应状态*/
-    Sn74hc573_Data |= CS1; 
+    Sn74hc573_Data = CS1; 
   }
   /*LCD片选右半部分 CS1 1 CS2 0*/
   else{
-    Sn74hc573_Data |= CS2;
+    Sn74hc573_Data = CS2;
   }
   /*数据*/
   OUTPUT_LCD_DB(Sn74hc573_Data);
@@ -46,6 +42,5 @@ void Sn_Output_CS(unsigned char bit)
   SET_LE();
   Delay_us(1);
   CLEAR_LE();
-  /**/
-  OUTPUT_LCD_DB(temp);
+
 }

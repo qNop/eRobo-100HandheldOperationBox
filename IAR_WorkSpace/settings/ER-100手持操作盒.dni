@@ -9,26 +9,11 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=-1233767392
+Checksum=1865286462
 [CallStack]
 ShowArgs=0
 [Disassembly]
 MixedMode=1
-[Breakpoints]
-Count=0
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
-[Aliases]
-Count=0
-SuppressDialog=0
-[Trace1]
-Enabled=0
-ShowSource=1
 [CallStackLog]
 Enabled=0
 [DriverProfiling]
@@ -37,3 +22,20 @@ Mode=1
 Graph=0
 Symbiont=0
 Exclusions=
+[Trace1]
+Enabled=0
+ShowSource=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.70.6" 1 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\Drv\LCD12864\LCD12864.c}.133.3" 1 0 0 0 "" 0 ""
+Count=2
+[Aliases]
+Count=0
+SuppressDialog=0

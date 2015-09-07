@@ -9,8 +9,8 @@
 /*输出KEY高低电平*/
 
 
-#define CS1       0XF2
-#define CS2       0XF1
+#define CS1       0XFD
+#define CS2       0XFE
 
 unsigned char Sn_Get_Data();
 void Sn_Output_KeyCode(unsigned char KeyCode);
