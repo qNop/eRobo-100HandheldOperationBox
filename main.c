@@ -10,8 +10,12 @@
 
 
 //sys配置
-#include "config.h"
+
 #include "io_port.h"
+#include "LCD12864.h"
+#include "config.h"
+#include "Sn74hc573.h"
+#include "delay.h"
 
 /**********************************全局变量*******************************************/
 
@@ -52,9 +56,11 @@ void Control_task(void *pvParameters)
 /***********************************主函数*******************************************/
 int main(void)
 {
-
   //初始化系统
   INIT_IO(); 
+  //初始化LCD
+  LCD_Init();
+  OUTPUT_LCD_DB(Sn_Get_Data());
  // 初始化Modbus
   eMBInit(MB_RTU,MODBUS_ADDR,0,MODBUS_BAUDRATE,MB_PAR_NONE);
   eMBEnable();

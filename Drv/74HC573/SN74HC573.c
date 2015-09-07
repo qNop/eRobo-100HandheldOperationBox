@@ -1,7 +1,7 @@
 #include <iopwm316.h>
 #include "SN74HC573.h"
 #include "IO_PORT.h"
-#include <intrinsics.h>
+#include "delay.h"
 
 static unsigned char Sn74hc573_Data;
  
@@ -17,16 +17,12 @@ void Sn_Output_KeyCode(unsigned char KeyCode)
   /*存储相应状态*/
   Sn74hc573_Data |= (KeyCode<<2);
   /*LE输出高电平*/
-  SET_LE();
   /*数据*/
   OUTPUT_LCD_DB(Sn74hc573_Data);
-  /*输出数据*/
-  CLEAR_LE();
-  /*延迟*/
-  __no_operation();
-  __no_operation();
   /*置位LE*/
   SET_LE();
+  Delay_us(1);
+  CLEAR_LE();
   /**/
   OUTPUT_LCD_DB(temp);
 }
@@ -44,16 +40,12 @@ void Sn_Output_CS(unsigned char bit)
   else{
     Sn74hc573_Data |= CS2;
   }
-  /*LE输出高电平*/
-  SET_LE();
   /*数据*/
   OUTPUT_LCD_DB(Sn74hc573_Data);
-  /*输出数据*/
-  CLEAR_LE();
-  __no_operation();
-  __no_operation();
   /*置位LE*/
   SET_LE();
+  Delay_us(1);
+  CLEAR_LE();
   /**/
   OUTPUT_LCD_DB(temp);
 }

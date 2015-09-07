@@ -412,6 +412,8 @@
           <state>$PROJ_DIR$\..\FreeModbus\port</state>
           <state>$PROJ_DIR$\..\FreeModbus\port\src</state>
           <state>$PROJ_DIR$\..\Drv\74HC573</state>
+          <state>$PROJ_DIR$\..\Drv\DELAY</state>
+          <state>$PROJ_DIR$\..\Drv\LCD12864</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -2016,7 +2018,7 @@
   <group>
     <name>APP</name>
     <file>
-      <name>$PROJ_DIR$\..\APP\Config.h</name>
+      <name>$PROJ_DIR$\..\Config.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\main.c</name>
@@ -2033,6 +2035,9 @@
   </group>
   <group>
     <name>Drv</name>
+    <file>
+      <name>$PROJ_DIR$\..\Drv\DELAY\delay.h</name>
+    </file>
     <file>
       <name>$PROJ_DIR$\..\Drv\IO\IO_Port.c</name>
     </file>

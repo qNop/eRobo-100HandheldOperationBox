@@ -66,6 +66,8 @@
 
 #include "iopwm316.h"
 
+
+
 /*系统错误类型*/
 typedef enum
 {
@@ -75,7 +77,7 @@ typedef enum
     
     Sys_Weld_Error,
     //也是应该有几种
-    
+    Sys_Lcd_Busy,
     
 }Sys_Error;
 /*PID定义*/

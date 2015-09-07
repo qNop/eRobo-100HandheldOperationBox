@@ -2,7 +2,7 @@
 #                                                                              #
 #      IAR Universal Linker V5.8.0.42                                          #
 #                                                                              #
-#           Link time     =  06/Sep/2015  18:59:20                             #
+#           Link time     =  07/Sep/2015  14:03:58                             #
 #           Target CPU    =  A90                                               #
 #           List file     =  E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐ #
 #                            òÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_ #
@@ -328,8 +328,9 @@ ABSOLUTE
            __?EEARH                00000022 
     -------------------------------------------------------------------------
 INITTAB
-  Relative segment, address: CODE 00001B22 - 00001B27 (0x6 bytes), align: 0
-  Segment part 8.             Intra module refs:   eMBCurrentMode (mb)
+  Relative segment, address: CODE 00001BF6 - 00001BFB (0x6 bytes), align: 0
+  Segment part 8.             Intra module refs:   Sn74hc573_Data (SN74HC573)
+                                                   eMBCurrentMode (mb)
                                                    eMBPoll::eException (mb)
                                                    eMBPoll::ucFunctionCode (mb)
                                                    eMBPoll::ucMBFrame (mb)
@@ -375,7 +376,7 @@ INITTAB
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?<Segment init: NEAR_Z>
-                                   00001B22 
+                                   00001BF6 
 
     *************************************************************************
 
@@ -385,8 +386,20 @@ INITTAB
   SEGMENTS IN THE MODULE
   ======================
 ABSOLUTE
-  Relative segment, address: DATA 0000002A - 0000002A (0x1 bytes), align: 0
+  Relative segment, address: DATA 0000002B - 0000002B (0x1 bytes), align: 0
   Segment part 1. ROOT        Intra module refs:   INIT_IO
+                                                   Lcd_GetBusy (LCD12864)
+                                                   Write_Cmd (LCD12864)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PORTD                0000002B 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           PORTD                   0000002B 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000002A - 0000002A (0x1 bytes), align: 0
+  Segment part 2. ROOT        Intra module refs:   INIT_IO
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_DDRD                 0000002A 
@@ -396,7 +409,10 @@ ABSOLUTE
     -------------------------------------------------------------------------
 ABSOLUTE
   Relative segment, address: DATA 00000028 - 00000028 (0x1 bytes), align: 0
-  Segment part 2. ROOT        Intra module refs:   INIT_IO
+  Segment part 3. ROOT        Intra module refs:   INIT_IO
+                                                   Lcd_GetBusy (LCD12864)
+                                                   Sn_Output_CS (SN74HC573)
+                                                   Write_Cmd (LCD12864)
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PORTC                00000028 
@@ -406,7 +422,7 @@ ABSOLUTE
     -------------------------------------------------------------------------
 ABSOLUTE
   Relative segment, address: DATA 00000027 - 00000027 (0x1 bytes), align: 0
-  Segment part 3. ROOT        Intra module refs:   INIT_IO
+  Segment part 4. ROOT        Intra module refs:   INIT_IO
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_DDRC                 00000027 
@@ -416,7 +432,10 @@ ABSOLUTE
     -------------------------------------------------------------------------
 ABSOLUTE
   Relative segment, address: DATA 00000025 - 00000025 (0x1 bytes), align: 0
-  Segment part 4. ROOT        Intra module refs:   INIT_IO
+  Segment part 5. ROOT        Intra module refs:   INIT_IO
+                                                   Sn_Output_CS (SN74HC573)
+                                                   Write_Cmd (LCD12864)
+                                                   main (main)
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PORTB                00000025 
@@ -424,9 +443,20 @@ ABSOLUTE
            =====                   =======         
            PORTB                   00000025 
     -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000024 - 00000024 (0x1 bytes), align: 0
+  Segment part 6. ROOT        Intra module refs:   INIT_IO
+                                                   Lcd_GetBusy (LCD12864)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_DDRB                 00000024 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           DDRB                    00000024 
+    -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000002EA - 0000030D (0x24 bytes), align: 1
-  Segment part 11.
+  Relative segment, address: CODE 000002EA - 00000313 (0x2a bytes), align: 1
+  Segment part 13.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            INIT_IO                 000002EA        main (main)
@@ -440,34 +470,42 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 ABSOLUTE
-  Relative segment, address: DATA 0000002B - 0000002B (0x1 bytes), align: 0
-  Segment part 1. ROOT 
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           _A_PORTD                0000002B 
-           LOCAL                   ADDRESS         
-           =====                   =======         
-           PORTD                   0000002B 
-    -------------------------------------------------------------------------
-ABSOLUTE
-  Relative segment, address: DATA 00000024 - 00000024 (0x1 bytes), align: 0
-  Segment part 3. ROOT 
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           _A_DDRB                 00000024 
-           LOCAL                   ADDRESS         
-           =====                   =======         
-           DDRB                    00000024 
-    -------------------------------------------------------------------------
-ABSOLUTE
   Relative segment, address: DATA 00000023 - 00000023 (0x1 bytes), align: 0
-  Segment part 4. ROOT 
+  Segment part 5. ROOT        Intra module refs:   Lcd_GetBusy
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PINB                 00000023 
            LOCAL                   ADDRESS         
            =====                   =======         
            PINB                    00000023 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000314 - 00000337 (0x24 bytes), align: 1
+  Segment part 12.            Intra module refs:   Write_Cmd
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Lcd_GetBusy             00000314 
+               RSTACK = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000338 - 00000375 (0x3e bytes), align: 1
+  Segment part 13.            Intra module refs:   LCD_Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Write_Cmd               00000338 
+               calls direct
+               CSTACK = 00000000 ( 00000001 )
+               RSTACK = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000376 - 0000039F (0x2a bytes), align: 1
+  Segment part 17.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           LCD_Init                00000376        main (main)
+               calls direct
+               CSTACK = 00000000 ( 00000001 )
+               RSTACK = 00000000 ( 00000002 )
 
     *************************************************************************
 
@@ -477,37 +515,37 @@ ABSOLUTE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 0000030E - 00000343 (0x36 bytes), align: 1
+  Relative segment, address: CODE 000003A0 - 000003D5 (0x36 bytes), align: 1
   Segment part 7.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vListInitialise         0000030E        prvInitialiseTaskLists (tasks)
+           vListInitialise         000003A0        prvInitialiseTaskLists (tasks)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000344 - 0000034F (0xc bytes), align: 1
+  Relative segment, address: CODE 000003D6 - 000003E1 (0xc bytes), align: 1
   Segment part 8.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vListInitialiseItem     00000344        prvInitialiseTCBVariables (tasks)
+           vListInitialiseItem     000003D6        prvInitialiseTCBVariables (tasks)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000350 - 00000399 (0x4a bytes), align: 1
+  Relative segment, address: CODE 000003E2 - 0000042B (0x4a bytes), align: 1
   Segment part 9.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vListInsertEnd          00000350        vTaskIncrementTick (tasks)
+           vListInsertEnd          000003E2        vTaskIncrementTick (tasks)
                                                    xTaskGenericCreate (tasks)
                                                    xTaskResumeAll (tasks)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000039A - 000003F1 (0x58 bytes), align: 1
+  Relative segment, address: CODE 0000042C - 00000483 (0x58 bytes), align: 1
   Segment part 11.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vListRemove             0000039A        vTaskIncrementTick (tasks)
+           vListRemove             0000042C        vTaskIncrementTick (tasks)
                                                    xTaskResumeAll (tasks)
                RSTACK = 00000000 ( 00000002 )
 
@@ -519,51 +557,51 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 000003F2 - 000003F7 (0x6 bytes), align: 1
-  Segment part 12.
+  Relative segment, address: CODE 00000484 - 00000489 (0x6 bytes), align: 1
+  Segment part 13.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vApplicationIdleHook    000003F2        prvIdleTask (tasks)
+           vApplicationIdleHook    00000484        prvIdleTask (tasks)
                calls direct
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000003F8 - 000003FD (0x6 bytes), align: 1
-  Segment part 13.            Intra module refs:   main
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           UART_Task               000003F8 
-               calls direct
-               RSTACK = 00000000 ( 00000002 )
-    -------------------------------------------------------------------------
-CODE
-  Relative segment, address: CODE 000003FE - 00000403 (0x6 bytes), align: 1
+  Relative segment, address: CODE 0000048A - 0000048F (0x6 bytes), align: 1
   Segment part 14.            Intra module refs:   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           Control_task            000003FE 
+           UART_Task               0000048A 
                calls direct
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000404 - 00000485 (0x82 bytes), align: 1
-  Segment part 15.
+  Relative segment, address: CODE 00000490 - 00000495 (0x6 bytes), align: 1
+  Segment part 15.            Intra module refs:   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           main                    00000404        ?cstartup_call_main (?C_STARTUP)
+           Control_task            00000490 
+               calls direct
+               RSTACK = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000496 - 00000521 (0x8c bytes), align: 1
+  Segment part 16.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           main                    00000496        ?cstartup_call_main (?C_STARTUP)
                calls direct
                CSTACK = 00000000 ( 00000007 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 NEAR_ID
-  Relative segment, address: CODE 00001B2E - 00001B35 (0x8 bytes), align: 0
-  Segment part 8.             Intra module refs:   Segment part 7
+  Relative segment, address: CODE 00001C02 - 00001C09 (0x8 bytes), align: 0
+  Segment part 9.             Intra module refs:   Segment part 8
     -------------------------------------------------------------------------
 INITTAB
-  Relative segment, address: CODE 00001B28 - 00001B2D (0x6 bytes), align: 0
-  Segment part 9.             Intra module refs:   Segment part 10
-                                                   Segment part 7
+  Relative segment, address: CODE 00001BFC - 00001C01 (0x6 bytes), align: 0
+  Segment part 10.            Intra module refs:   Segment part 11
                                                    Segment part 7 (tasks)
+                                                   Segment part 8
                                                    eMBState (mb)
                                                    uxCriticalNesting (port)
                                                    xFuncHandlers (mb)
@@ -571,19 +609,19 @@ INITTAB
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?<Segment init: NEAR_I>
-                                   00001B28 
+                                   00001BFC 
     -------------------------------------------------------------------------
 NEAR_ID
-  Relative segment, address: CODE 00001B36 - 00001B3A (0x5 bytes), align: 0
-  Segment part 11.            Intra module refs:   Segment part 10
+  Relative segment, address: CODE 00001C0A - 00001C0E (0x5 bytes), align: 0
+  Segment part 12.            Intra module refs:   Segment part 11
     -------------------------------------------------------------------------
 NEAR_I
   Relative segment, address: DATA 00000160 - 00000167 (0x8 bytes), align: 0
-  Segment part 7.             Intra module refs:   main
+  Segment part 8.             Intra module refs:   main
     -------------------------------------------------------------------------
 NEAR_I
   Relative segment, address: DATA 00000168 - 0000016C (0x5 bytes), align: 0
-  Segment part 10.            Intra module refs:   main
+  Segment part 11.            Intra module refs:   main
 
     *************************************************************************
 
@@ -686,31 +724,31 @@ NEAR_I
            xFuncHandlers           0000016E 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000486 - 0000053B (0xb6 bytes), align: 1
+  Relative segment, address: CODE 00000522 - 000005D7 (0xb6 bytes), align: 1
   Segment part 30.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBInit                 00000486        main (main)
+           eMBInit                 00000522        main (main)
                calls direct
                CSTACK = 00000000 ( 00000002 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000053C - 00000561 (0x26 bytes), align: 1
+  Relative segment, address: CODE 000005D8 - 000005FD (0x26 bytes), align: 1
   Segment part 33.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBEnable               0000053C        main (main)
+           eMBEnable               000005D8        main (main)
                calls indirect
                CSTACK = 00000000 ( 00000001 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000562 - 000006EB (0x18a bytes), align: 1
+  Relative segment, address: CODE 000005FE - 00000787 (0x18a bytes), align: 1
   Segment part 35.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBPoll                 00000562        vApplicationIdleHook (main)
+           eMBPoll                 000005FE        vApplicationIdleHook (main)
                calls direct and indirect
                CSTACK = 00000000 ( 00000003 )
                RSTACK = 00000000 ( 00000004 )
@@ -752,11 +790,11 @@ NEAR_Z
            eMBPoll::eException     00000335 
     -------------------------------------------------------------------------
 NEAR_ID
-  Relative segment, address: CODE 00001B3B - 00001B3B (0x1 bytes), align: 0
+  Relative segment, address: CODE 00001C0F - 00001C0F (0x1 bytes), align: 0
   Segment part 11.            Intra module refs:   eMBState
     -------------------------------------------------------------------------
 NEAR_ID
-  Relative segment, address: CODE 00001B3C - 00001B50 (0x15 bytes), align: 0
+  Relative segment, address: CODE 00001C10 - 00001C24 (0x15 bytes), align: 0
   Segment part 24.            Intra module refs:   xFuncHandlers
 
     *************************************************************************
@@ -781,11 +819,11 @@ NEAR_F
            aucCRCLo                00000180 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000006EC - 00000737 (0x4c bytes), align: 1
+  Relative segment, address: CODE 00000788 - 000007D3 (0x4c bytes), align: 1
   Segment part 9.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           usMBCRC16               000006EC        eMBRTUReceive (mbrtu)
+           usMBCRC16               00000788        eMBRTUReceive (mbrtu)
                                                    eMBRTUSend (mbrtu)
                RSTACK = 00000000 ( 00000002 )
 
@@ -797,32 +835,32 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00000738 - 00000809 (0xd2 bytes), align: 1
+  Relative segment, address: CODE 000007D4 - 000008A5 (0xd2 bytes), align: 1
   Segment part 7.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBFuncReadCoils        00000738        Segment part 24 (mb)
+           eMBFuncReadCoils        000007D4        Segment part 24 (mb)
                calls direct
                CSTACK = 00000000 ( 00000004 )
                RSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000080A - 0000087F (0x76 bytes), align: 1
+  Relative segment, address: CODE 000008A6 - 0000091B (0x76 bytes), align: 1
   Segment part 8.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBFuncWriteCoil        0000080A        Segment part 24 (mb)
+           eMBFuncWriteCoil        000008A6        Segment part 24 (mb)
                calls direct
                CSTACK = 00000000 ( 00000006 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000880 - 00000923 (0xa4 bytes), align: 1
+  Relative segment, address: CODE 0000091C - 000009BF (0xa4 bytes), align: 1
   Segment part 9.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            eMBFuncWriteMultipleCoils
-                                   00000880        Segment part 24 (mb)
+                                   0000091C        Segment part 24 (mb)
                calls direct
                CSTACK = 00000000 ( 00000004 )
                RSTACK = 00000000 ( 00000004 )
@@ -838,34 +876,34 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00000924 - 0000096B (0x48 bytes), align: 1
+  Relative segment, address: CODE 000009C0 - 00000A07 (0x48 bytes), align: 1
   Segment part 7.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            eMBFuncWriteHoldingRegister
-                                   00000924        Segment part 24 (mb)
+                                   000009C0        Segment part 24 (mb)
                calls direct
                CSTACK = 00000000 ( 00000001 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000096C - 000009EB (0x80 bytes), align: 1
+  Relative segment, address: CODE 00000A08 - 00000A87 (0x80 bytes), align: 1
   Segment part 8.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            eMBFuncWriteMultipleHoldingRegister
-                                   0000096C        Segment part 24 (mb)
+                                   00000A08        Segment part 24 (mb)
                calls direct
                CSTACK = 00000000 ( 00000004 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000009EC - 00000A9D (0xb2 bytes), align: 1
+  Relative segment, address: CODE 00000A88 - 00000B39 (0xb2 bytes), align: 1
   Segment part 9.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            eMBFuncReadHoldingRegister
-                                   000009EC        Segment part 24 (mb)
+                                   00000A88        Segment part 24 (mb)
                calls direct
                CSTACK = 00000000 ( 00000005 )
                RSTACK = 00000000 ( 00000002 )
@@ -878,12 +916,12 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00000A9E - 00000B53 (0xb6 bytes), align: 1
+  Relative segment, address: CODE 00000B3A - 00000BEF (0xb6 bytes), align: 1
   Segment part 7.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            eMBFuncReadInputRegister
-                                   00000A9E        Segment part 24 (mb)
+                                   00000B3A        Segment part 24 (mb)
                calls direct
                CSTACK = 00000000 ( 00000005 )
                RSTACK = 00000000 ( 00000002 )
@@ -950,81 +988,81 @@ NEAR_Z
            usRcvBufferPos          00000360 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000B54 - 00000BAD (0x5a bytes), align: 1
+  Relative segment, address: CODE 00000BF0 - 00000C49 (0x5a bytes), align: 1
   Segment part 14.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBRTUInit              00000B54        eMBInit (mb)
+           eMBRTUInit              00000BF0        eMBInit (mb)
                calls direct
                CSTACK = 00000000 ( 00000007 )
                RSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000BAE - 00000BC9 (0x1c bytes), align: 1
+  Relative segment, address: CODE 00000C4A - 00000C65 (0x1c bytes), align: 1
   Segment part 15.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBRTUStart             00000BAE        eMBInit (mb)
+           eMBRTUStart             00000C4A        eMBInit (mb)
                calls direct
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000BCA - 00000BDF (0x16 bytes), align: 1
+  Relative segment, address: CODE 00000C66 - 00000C7B (0x16 bytes), align: 1
   Segment part 16.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBRTUStop              00000BCA        eMBInit (mb)
+           eMBRTUStop              00000C66        eMBInit (mb)
                calls direct
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000BE0 - 00000C43 (0x64 bytes), align: 1
+  Relative segment, address: CODE 00000C7C - 00000CDF (0x64 bytes), align: 1
   Segment part 17.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBRTUReceive           00000BE0        eMBInit (mb)
+           eMBRTUReceive           00000C7C        eMBInit (mb)
                calls direct
                CSTACK = 00000000 ( 00000008 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000C44 - 00000CFB (0xb8 bytes), align: 1
+  Relative segment, address: CODE 00000CE0 - 00000D97 (0xb8 bytes), align: 1
   Segment part 18.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBRTUSend              00000C44        eMBInit (mb)
+           eMBRTUSend              00000CE0        eMBInit (mb)
                calls direct
                CSTACK = 00000000 ( 00000006 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000CFC - 00000DA1 (0xa6 bytes), align: 1
+  Relative segment, address: CODE 00000D98 - 00000E3D (0xa6 bytes), align: 1
   Segment part 19.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xMBRTUReceiveFSM        00000CFC        RXC_isr (portserial)
+           xMBRTUReceiveFSM        00000D98        RXC_isr (portserial)
                                                    eMBInit (mb)
                calls direct
                CSTACK = 00000000 ( 00000004 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000DA2 - 00000E15 (0x74 bytes), align: 1
+  Relative segment, address: CODE 00000E3E - 00000EB1 (0x74 bytes), align: 1
   Segment part 20.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xMBRTUTransmitFSM       00000DA2        TX_isr (portserial)
+           xMBRTUTransmitFSM       00000E3E        TX_isr (portserial)
                                                    eMBInit (mb)
                calls direct
                CSTACK = 00000000 ( 00000001 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000E16 - 00000E4D (0x38 bytes), align: 1
+  Relative segment, address: CODE 00000EB2 - 00000EE9 (0x38 bytes), align: 1
   Segment part 21.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xMBRTUTimerT35Expired   00000E16        eMBInit (mb)
+           xMBRTUTimerT35Expired   00000EB2        eMBInit (mb)
                                                    prvvTIMERExpiredISR (porttimer)
                calls direct
                CSTACK = 00000000 ( 00000001 )
@@ -1038,11 +1076,11 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00000E4E - 00000E6B (0x1e bytes), align: 1
+  Relative segment, address: CODE 00000EEA - 00000F07 (0x1e bytes), align: 1
   Segment part 9.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           prveMBError2Exception   00000E4E        eMBFuncReadCoils (mbfunccoils)
+           prveMBError2Exception   00000EEA        eMBFuncReadCoils (mbfunccoils)
                                                    eMBFuncReadHoldingRegister (mbfuncholding)
                                                    eMBFuncReadInputRegister (mbfuncinput)
                                                    eMBFuncWriteCoil (mbfunccoils)
@@ -1099,62 +1137,62 @@ NEAR_I
            uxCriticalNesting       00000183        Segment part 0 (portmacro)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000E6C - 00000F69 (0xfe bytes), align: 1
+  Relative segment, address: CODE 00000F08 - 00001005 (0xfe bytes), align: 1
   Segment part 13.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           pxPortInitialiseStack   00000E6C        xTaskGenericCreate (tasks)
+           pxPortInitialiseStack   00000F08        xTaskGenericCreate (tasks)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000F6A - 00000F73 (0xa bytes), align: 1
+  Relative segment, address: CODE 00001006 - 0000100F (0xa bytes), align: 1
   Segment part 14.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xPortStartScheduler     00000F6A        vTaskStartScheduler (tasks)
+           xPortStartScheduler     00001006        vTaskStartScheduler (tasks)
                calls direct
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000F74 - 00000FA7 (0x34 bytes), align: 1
+  Relative segment, address: CODE 00001010 - 00001043 (0x34 bytes), align: 1
   Segment part 16.            Intra module refs:   xPortStartScheduler
            LOCAL                   ADDRESS         
            =====                   =======         
            prvSetupTimerInterrupt
-                                   00000F74 
+                                   00001010 
                RSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000FA8 - 00000FAF (0x8 bytes), align: 1
+  Relative segment, address: CODE 00001044 - 0000104B (0x8 bytes), align: 1
   Segment part 17.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           SIG_OUTPUT_COMPARE1A    00000FA8        Absolute parts (portmacro)
+           SIG_OUTPUT_COMPARE1A    00001044        Absolute parts (portmacro)
                calls direct
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000FB0 - 00000FBD (0xe bytes), align: 1
+  Relative segment, address: CODE 0000104C - 00001059 (0xe bytes), align: 1
   Segment part 18.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vPortEnterCritical      00000FB0        xTaskGenericCreate (tasks)
+           vPortEnterCritical      0000104C        xTaskGenericCreate (tasks)
                                                    xTaskGetTickCount (tasks)
                                                    xTaskResumeAll (tasks)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000FBE - 00000FD3 (0x16 bytes), align: 1
+  Relative segment, address: CODE 0000105A - 0000106F (0x16 bytes), align: 1
   Segment part 19.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vPortExitCritical       00000FBE        xTaskGenericCreate (tasks)
+           vPortExitCritical       0000105A        xTaskGenericCreate (tasks)
                                                    xTaskGetTickCount (tasks)
                                                    xTaskResumeAll (tasks)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 NEAR_ID
-  Relative segment, address: CODE 00001B51 - 00001B51 (0x1 bytes), align: 0
+  Relative segment, address: CODE 00001C25 - 00001C25 (0x1 bytes), align: 0
   Segment part 11.            Intra module refs:   uxCriticalNesting
 
     *************************************************************************
@@ -1182,29 +1220,29 @@ NEAR_Z
            xEventInQueue           00000363 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000FD4 - 00000FDD (0xa bytes), align: 1
+  Relative segment, address: CODE 00001070 - 00001079 (0xa bytes), align: 1
   Segment part 10.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xMBPortEventInit        00000FD4        eMBInit (mb)
+           xMBPortEventInit        00001070        eMBInit (mb)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000FDE - 00000FEB (0xe bytes), align: 1
+  Relative segment, address: CODE 0000107A - 00001087 (0xe bytes), align: 1
   Segment part 11.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xMBPortEventPost        00000FDE        eMBPoll (mb)
+           xMBPortEventPost        0000107A        eMBPoll (mb)
                                                    xMBRTUTimerT35Expired (mbrtu)
                                                    xMBRTUTransmitFSM (mbrtu)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000FEC - 00001009 (0x1e bytes), align: 1
+  Relative segment, address: CODE 00001088 - 000010A5 (0x1e bytes), align: 1
   Segment part 12.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xMBPortEventGet         00000FEC        eMBPoll (mb)
+           xMBPortEventGet         00001088        eMBPoll (mb)
                RSTACK = 00000000 ( 00000002 )
 
     *************************************************************************
@@ -1219,17 +1257,17 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 0000100A - 000011E3 (0x1da bytes), align: 1
+  Relative segment, address: CODE 000010A6 - 0000127F (0x1da bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vPortYield              0000100A        xTaskGenericCreate (tasks)
+           vPortYield              000010A6        xTaskGenericCreate (tasks)
                                                    xTaskResumeAll (tasks)
-           vPortYieldFromTick      000010C6        SIG_OUTPUT_COMPARE1A (port)
-           vPortStart              00001186        xPortStartScheduler (port)
+           vPortYieldFromTick      00001162        SIG_OUTPUT_COMPARE1A (port)
+           vPortStart              00001222        xPortStartScheduler (port)
            LOCAL                   ADDRESS         
            =====                   =======         
-           vNoISR                  000011E2 
+           vNoISR                  0000127E 
 
     *************************************************************************
 
@@ -1306,11 +1344,11 @@ ABSOLUTE
            SREG                    0000005F 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000011E4 - 00001229 (0x46 bytes), align: 1
+  Relative segment, address: CODE 00001280 - 000012C5 (0x46 bytes), align: 1
   Segment part 13.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vMBPortSerialEnable     000011E4        eMBRTUSend (mbrtu)
+           vMBPortSerialEnable     00001280        eMBRTUSend (mbrtu)
                                                    eMBRTUStart (mbrtu)
                                                    eMBRTUStop (mbrtu)
                                                    xMBRTUTransmitFSM (mbrtu)
@@ -1319,57 +1357,57 @@ CODE
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000122A - 0000125D (0x34 bytes), align: 1
+  Relative segment, address: CODE 000012C6 - 000012F9 (0x34 bytes), align: 1
   Segment part 14.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xMBPortSerialInit       0000122A        eMBRTUInit (mbrtu)
+           xMBPortSerialInit       000012C6        eMBRTUInit (mbrtu)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000125E - 00001271 (0x14 bytes), align: 1
+  Relative segment, address: CODE 000012FA - 0000130D (0x14 bytes), align: 1
   Segment part 15.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xMBPortSerialPutByte    0000125E        xMBRTUTransmitFSM (mbrtu)
+           xMBPortSerialPutByte    000012FA        xMBRTUTransmitFSM (mbrtu)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001272 - 0000127D (0xc bytes), align: 1
+  Relative segment, address: CODE 0000130E - 00001319 (0xc bytes), align: 1
   Segment part 16.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xMBPortSerialGetByte    00001272        xMBRTUReceiveFSM (mbrtu)
+           xMBPortSerialGetByte    0000130E        xMBRTUReceiveFSM (mbrtu)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000127E - 000012C3 (0x46 bytes), align: 1
+  Relative segment, address: CODE 0000131A - 0000135F (0x46 bytes), align: 1
   Segment part 17.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           RXC_isr                 0000127E        Absolute parts (portmacro)
+           RXC_isr                 0000131A        Absolute parts (portmacro)
                interrupt function
                calls direct
                CSTACK = 00000000 ( 0000000F )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000012C4 - 00001309 (0x46 bytes), align: 1
+  Relative segment, address: CODE 00001360 - 000013A5 (0x46 bytes), align: 1
   Segment part 18.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           TX_isr                  000012C4        Absolute parts (portmacro)
+           TX_isr                  00001360        Absolute parts (portmacro)
                interrupt function
                calls direct
                CSTACK = 00000000 ( 0000000F )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000130A - 0000130D (0x4 bytes), align: 1
+  Relative segment, address: CODE 000013A6 - 000013A9 (0x4 bytes), align: 1
   Segment part 19.            Intra module refs:   vMBPortSerialEnable
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           EnterCriticalSection    0000130A        eMBRTUInit (mbrtu)
+           EnterCriticalSection    000013A6        eMBRTUInit (mbrtu)
                                                    eMBRTUReceive (mbrtu)
                                                    eMBRTUSend (mbrtu)
                                                    eMBRTUStart (mbrtu)
@@ -1377,11 +1415,11 @@ CODE
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000130E - 00001311 (0x4 bytes), align: 1
+  Relative segment, address: CODE 000013AA - 000013AD (0x4 bytes), align: 1
   Segment part 20.            Intra module refs:   vMBPortSerialEnable
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ExitCriticalSection     0000130E        eMBRTUInit (mbrtu)
+           ExitCriticalSection     000013AA        eMBRTUInit (mbrtu)
                                                    eMBRTUReceive (mbrtu)
                                                    eMBRTUSend (mbrtu)
                                                    eMBRTUStart (mbrtu)
@@ -1440,47 +1478,47 @@ ABSOLUTE
            TCCR0A                  00000044 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001312 - 00001317 (0x6 bytes), align: 1
+  Relative segment, address: CODE 000013AE - 000013B3 (0x6 bytes), align: 1
   Segment part 12.            Intra module refs:   Timer0Isr
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           prvvTIMERExpiredISR     00001312 
+           prvvTIMERExpiredISR     000013AE 
                calls direct
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001318 - 00001327 (0x10 bytes), align: 1
+  Relative segment, address: CODE 000013B4 - 000013C3 (0x10 bytes), align: 1
   Segment part 13.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xMBPortTimersInit       00001318        eMBRTUInit (mbrtu)
+           xMBPortTimersInit       000013B4        eMBRTUInit (mbrtu)
                calls direct
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001328 - 00001343 (0x1c bytes), align: 1
+  Relative segment, address: CODE 000013C4 - 000013DF (0x1c bytes), align: 1
   Segment part 14.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vMBPortTimersEnable     00001328        eMBRTUStart (mbrtu)
+           vMBPortTimersEnable     000013C4        eMBRTUStart (mbrtu)
                                                    xMBRTUReceiveFSM (mbrtu)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001344 - 00001361 (0x1e bytes), align: 1
+  Relative segment, address: CODE 000013E0 - 000013FD (0x1e bytes), align: 1
   Segment part 15.            Intra module refs:   xMBPortTimersInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vMBPortTimersDisable    00001344        eMBRTUStop (mbrtu)
+           vMBPortTimersDisable    000013E0        eMBRTUStop (mbrtu)
                                                    xMBRTUTimerT35Expired (mbrtu)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001362 - 000013A9 (0x48 bytes), align: 1
+  Relative segment, address: CODE 000013FE - 00001445 (0x48 bytes), align: 1
   Segment part 16.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           Timer0Isr               00001362        Absolute parts (portmacro)
+           Timer0Isr               000013FE        Absolute parts (portmacro)
                interrupt function
                calls direct
                CSTACK = 00000000 ( 0000000F )
@@ -1496,6 +1534,29 @@ CODE
 
   SEGMENTS IN THE MODULE
   ======================
+NEAR_Z
+  Relative segment, address: DATA 00000364 - 00000364 (0x1 bytes), align: 0
+  Segment part 9.             Intra module refs:   Sn_Get_Data
+                                                   Sn_Output_CS
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           Sn74hc573_Data          00000364 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001446 - 0000144B (0x6 bytes), align: 1
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Sn_Get_Data             00001446        main (main)
+               RSTACK = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000144C - 0000147D (0x32 bytes), align: 1
+  Segment part 13.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Sn_Output_CS            0000144C        LCD_Init (LCD12864)
+               RSTACK = 00000000 ( 00000002 )
 
     *************************************************************************
 
@@ -1505,16 +1566,16 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 NEAR_Z
-  Relative segment, address: DATA 00000364 - 00000365 (0x2 bytes), align: 0
+  Relative segment, address: DATA 00000365 - 00000366 (0x2 bytes), align: 0
   Segment part 10.            Intra module refs:   vTaskSwitchContext
                                                    xTaskGenericCreate
                                                    xTaskResumeAll
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           pxCurrentTCB            00000364        Segment part 0 (portmacro)
+           pxCurrentTCB            00000365        Segment part 0 (portmacro)
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 00000366 - 00000389 (0x24 bytes), align: 0
+  Relative segment, address: DATA 00000367 - 0000038A (0x24 bytes), align: 0
   Segment part 12.            Intra module refs:   prvInitialiseTaskLists
                                                    vTaskIncrementTick
                                                    vTaskSwitchContext
@@ -1522,136 +1583,136 @@ NEAR_Z
                                                    xTaskResumeAll
            LOCAL                   ADDRESS         
            =====                   =======         
-           pxReadyTasksLists       00000366 
+           pxReadyTasksLists       00000367 
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 0000038A - 00000392 (0x9 bytes), align: 0
+  Relative segment, address: DATA 0000038B - 00000393 (0x9 bytes), align: 0
   Segment part 13.            Intra module refs:   prvInitialiseTaskLists
            LOCAL                   ADDRESS         
            =====                   =======         
-           xDelayedTaskList1       0000038A 
+           xDelayedTaskList1       0000038B 
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 00000393 - 0000039B (0x9 bytes), align: 0
+  Relative segment, address: DATA 00000394 - 0000039C (0x9 bytes), align: 0
   Segment part 14.            Intra module refs:   prvInitialiseTaskLists
            LOCAL                   ADDRESS         
            =====                   =======         
-           xDelayedTaskList2       00000393 
+           xDelayedTaskList2       00000394 
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 0000039C - 0000039D (0x2 bytes), align: 0
+  Relative segment, address: DATA 0000039D - 0000039E (0x2 bytes), align: 0
   Segment part 15.            Intra module refs:   prvInitialiseTaskLists
                                                    vTaskIncrementTick
            LOCAL                   ADDRESS         
            =====                   =======         
-           pxDelayedTaskList       0000039C 
+           pxDelayedTaskList       0000039D 
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 0000039E - 0000039F (0x2 bytes), align: 0
+  Relative segment, address: DATA 0000039F - 000003A0 (0x2 bytes), align: 0
   Segment part 16.            Intra module refs:   prvInitialiseTaskLists
                                                    vTaskIncrementTick
            LOCAL                   ADDRESS         
            =====                   =======         
            pxOverflowDelayedTaskList
-                                   0000039E 
+                                   0000039F 
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 000003A0 - 000003A8 (0x9 bytes), align: 0
+  Relative segment, address: DATA 000003A1 - 000003A9 (0x9 bytes), align: 0
   Segment part 17.            Intra module refs:   prvInitialiseTaskLists
                                                    xTaskResumeAll
            LOCAL                   ADDRESS         
            =====                   =======         
-           xPendingReadyList       000003A0 
+           xPendingReadyList       000003A1 
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 000003A9 - 000003B1 (0x9 bytes), align: 0
+  Relative segment, address: DATA 000003AA - 000003B2 (0x9 bytes), align: 0
   Segment part 18.            Intra module refs:   prvInitialiseTaskLists
            LOCAL                   ADDRESS         
            =====                   =======         
-           xSuspendedTaskList      000003A9 
+           xSuspendedTaskList      000003AA 
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 000003B2 - 000003B2 (0x1 bytes), align: 0
+  Relative segment, address: DATA 000003B3 - 000003B3 (0x1 bytes), align: 0
   Segment part 19.            Intra module refs:   xTaskGenericCreate
                                                    xTaskResumeAll
            LOCAL                   ADDRESS         
            =====                   =======         
            uxCurrentNumberOfTasks
-                                   000003B2 
+                                   000003B3 
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 000003B3 - 000003B4 (0x2 bytes), align: 0
+  Relative segment, address: DATA 000003B4 - 000003B5 (0x2 bytes), align: 0
   Segment part 20.            Intra module refs:   vTaskIncrementTick
                                                    vTaskStartScheduler
                                                    xTaskGetTickCount
            LOCAL                   ADDRESS         
            =====                   =======         
-           xTickCount              000003B3 
-    -------------------------------------------------------------------------
-NEAR_Z
-  Relative segment, address: DATA 000003B5 - 000003B5 (0x1 bytes), align: 0
-  Segment part 21.            Intra module refs:   xTaskGenericCreate
-           LOCAL                   ADDRESS         
-           =====                   =======         
-           uxTopUsedPriority       000003B5 
+           xTickCount              000003B4 
     -------------------------------------------------------------------------
 NEAR_Z
   Relative segment, address: DATA 000003B6 - 000003B6 (0x1 bytes), align: 0
+  Segment part 21.            Intra module refs:   xTaskGenericCreate
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           uxTopUsedPriority       000003B6 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000003B7 - 000003B7 (0x1 bytes), align: 0
   Segment part 22.            Intra module refs:   vTaskIncrementTick
                                                    vTaskSwitchContext
                                                    xTaskGenericCreate
                                                    xTaskResumeAll
            LOCAL                   ADDRESS         
            =====                   =======         
-           uxTopReadyPriority      000003B6 
+           uxTopReadyPriority      000003B7 
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 000003B7 - 000003B7 (0x1 bytes), align: 0
+  Relative segment, address: DATA 000003B8 - 000003B8 (0x1 bytes), align: 0
   Segment part 23.            Intra module refs:   vTaskStartScheduler
                                                    xTaskGenericCreate
            LOCAL                   ADDRESS         
            =====                   =======         
-           xSchedulerRunning       000003B7 
+           xSchedulerRunning       000003B8 
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 000003B8 - 000003B8 (0x1 bytes), align: 0
+  Relative segment, address: DATA 000003B9 - 000003B9 (0x1 bytes), align: 0
   Segment part 24.            Intra module refs:   vTaskIncrementTick
                                                    vTaskSuspendAll
                                                    vTaskSwitchContext
                                                    xTaskResumeAll
            LOCAL                   ADDRESS         
            =====                   =======         
-           uxSchedulerSuspended    000003B8 
+           uxSchedulerSuspended    000003B9 
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 000003B9 - 000003B9 (0x1 bytes), align: 0
+  Relative segment, address: DATA 000003BA - 000003BA (0x1 bytes), align: 0
   Segment part 25.            Intra module refs:   vTaskIncrementTick
                                                    xTaskResumeAll
            LOCAL                   ADDRESS         
            =====                   =======         
-           uxMissedTicks           000003B9 
+           uxMissedTicks           000003BA 
     -------------------------------------------------------------------------
 NEAR_Z
-  Relative segment, address: DATA 000003BA - 000003BA (0x1 bytes), align: 0
+  Relative segment, address: DATA 000003BB - 000003BB (0x1 bytes), align: 0
   Segment part 26.            Intra module refs:   vTaskSwitchContext
                                                    xTaskResumeAll
            LOCAL                   ADDRESS         
            =====                   =======         
-           xMissedYield            000003BA 
-    -------------------------------------------------------------------------
-NEAR_Z
-  Relative segment, address: DATA 000003BB - 000003BB (0x1 bytes), align: 0
-  Segment part 27.            Intra module refs:   vTaskIncrementTick
-           LOCAL                   ADDRESS         
-           =====                   =======         
-           xNumOfOverflows         000003BB 
+           xMissedYield            000003BB 
     -------------------------------------------------------------------------
 NEAR_Z
   Relative segment, address: DATA 000003BC - 000003BC (0x1 bytes), align: 0
+  Segment part 27.            Intra module refs:   vTaskIncrementTick
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           xNumOfOverflows         000003BC 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000003BD - 000003BD (0x1 bytes), align: 0
   Segment part 28.            Intra module refs:   xTaskGenericCreate
            LOCAL                   ADDRESS         
            =====                   =======         
-           uxTaskNumber            000003BC 
+           uxTaskNumber            000003BD 
     -------------------------------------------------------------------------
 NEAR_I
   Relative segment, address: DATA 00000184 - 00000188 (0x5 bytes), align: 0
@@ -1665,128 +1726,128 @@ NEAR_I
            xNextTaskUnblockTime    00000189 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000013AA - 000014D3 (0x12a bytes), align: 1
+  Relative segment, address: CODE 0000147E - 000015A7 (0x12a bytes), align: 1
   Segment part 31.            Intra module refs:   vTaskStartScheduler
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xTaskGenericCreate      000013AA        main (main)
+           xTaskGenericCreate      0000147E        main (main)
                calls direct
                CSTACK = 00000000 ( 00000017 )
                RSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000014D4 - 0000151F (0x4c bytes), align: 1
+  Relative segment, address: CODE 000015A8 - 000015F3 (0x4c bytes), align: 1
   Segment part 37.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vTaskStartScheduler     000014D4        main (main)
+           vTaskStartScheduler     000015A8        main (main)
                calls direct
                CSTACK = 00000000 ( 00000007 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001520 - 0000152B (0xc bytes), align: 1
+  Relative segment, address: CODE 000015F4 - 000015FF (0xc bytes), align: 1
   Segment part 39.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vTaskSuspendAll         00001520        pvPortMalloc (heap_1)
+           vTaskSuspendAll         000015F4        pvPortMalloc (heap_1)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000152C - 0000160D (0xe2 bytes), align: 1
+  Relative segment, address: CODE 00001600 - 000016E1 (0xe2 bytes), align: 1
   Segment part 40.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xTaskResumeAll          0000152C        pvPortMalloc (heap_1)
+           xTaskResumeAll          00001600        pvPortMalloc (heap_1)
                calls direct
                CSTACK = 00000000 ( 00000004 )
                RSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000160E - 00001629 (0x1c bytes), align: 1
+  Relative segment, address: CODE 000016E2 - 000016FD (0x1c bytes), align: 1
   Segment part 41.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           xTaskGetTickCount       0000160E        Control_task (main)
+           xTaskGetTickCount       000016E2        Control_task (main)
                                                    UART_Task (main)
                calls direct
                CSTACK = 00000000 ( 00000002 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000162A - 00001785 (0x15c bytes), align: 1
+  Relative segment, address: CODE 000016FE - 00001859 (0x15c bytes), align: 1
   Segment part 44.            Intra module refs:   xTaskResumeAll
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vTaskIncrementTick      0000162A        Segment part 0 (portmacro)
+           vTaskIncrementTick      000016FE        Segment part 0 (portmacro)
                calls direct
                CSTACK = 00000000 ( 00000002 )
                RSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001786 - 0000181F (0x9a bytes), align: 1
+  Relative segment, address: CODE 0000185A - 000018F3 (0x9a bytes), align: 1
   Segment part 45.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           vTaskSwitchContext      00001786        Segment part 0 (portmacro)
+           vTaskSwitchContext      0000185A        Segment part 0 (portmacro)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001820 - 00001827 (0x8 bytes), align: 1
+  Relative segment, address: CODE 000018F4 - 000018FB (0x8 bytes), align: 1
   Segment part 51.            Intra module refs:   vTaskStartScheduler
            LOCAL                   ADDRESS         
            =====                   =======         
-           prvIdleTask             00001820 
+           prvIdleTask             000018F4 
                calls direct
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001828 - 00001883 (0x5c bytes), align: 1
+  Relative segment, address: CODE 000018FC - 00001957 (0x5c bytes), align: 1
   Segment part 52.            Intra module refs:   xTaskGenericCreate
            LOCAL                   ADDRESS         
            =====                   =======         
            prvInitialiseTCBVariables
-                                   00001828 
+                                   000018FC 
                calls direct
                CSTACK = 00000000 ( 00000006 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001884 - 000018E5 (0x62 bytes), align: 1
+  Relative segment, address: CODE 00001958 - 000019B9 (0x62 bytes), align: 1
   Segment part 53.            Intra module refs:   xTaskGenericCreate
            LOCAL                   ADDRESS         
            =====                   =======         
            prvInitialiseTaskLists
-                                   00001884 
+                                   00001958 
                calls direct
                CSTACK = 00000000 ( 00000001 )
                RSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000018E6 - 000018E7 (0x2 bytes), align: 1
+  Relative segment, address: CODE 000019BA - 000019BB (0x2 bytes), align: 1
   Segment part 54.            Intra module refs:   prvIdleTask
            LOCAL                   ADDRESS         
            =====                   =======         
            prvCheckTasksWaitingTermination
-                                   000018E6 
+                                   000019BA 
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000018E8 - 00001943 (0x5c bytes), align: 1
+  Relative segment, address: CODE 000019BC - 00001A17 (0x5c bytes), align: 1
   Segment part 56.            Intra module refs:   xTaskGenericCreate
            LOCAL                   ADDRESS         
            =====                   =======         
            prvAllocateTCBAndStack
-                                   000018E8 
+                                   000019BC 
                calls direct
                CSTACK = 00000000 ( 00000006 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 NEAR_ID
-  Relative segment, address: CODE 00001B52 - 00001B56 (0x5 bytes), align: 0
+  Relative segment, address: CODE 00001C26 - 00001C2A (0x5 bytes), align: 0
   Segment part 8.             Intra module refs:   Segment part 7
     -------------------------------------------------------------------------
 NEAR_ID
-  Relative segment, address: CODE 00001B57 - 00001B58 (0x2 bytes), align: 0
+  Relative segment, address: CODE 00001C2B - 00001C2C (0x2 bytes), align: 0
   Segment part 30.            Intra module refs:   xNextTaskUnblockTime
 
     *************************************************************************
@@ -1800,29 +1861,29 @@ NEAR_ID
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001944 - 00001979 (0x36 bytes), align: 1
+  Relative segment, address: CODE 00001A18 - 00001A4D (0x36 bytes), align: 1
   Segment part 7.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBRegCoilsCB           00001944        eMBFuncReadCoils (mbfunccoils)
+           eMBRegCoilsCB           00001A18        eMBFuncReadCoils (mbfunccoils)
                                                    eMBFuncWriteCoil (mbfunccoils)
                                                    eMBFuncWriteMultipleCoils (mbfunccoils)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000197A - 000019A5 (0x2c bytes), align: 1
+  Relative segment, address: CODE 00001A4E - 00001A79 (0x2c bytes), align: 1
   Segment part 8.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBRegInputCB           0000197A        eMBFuncReadInputRegister (mbfuncinput)
+           eMBRegInputCB           00001A4E        eMBFuncReadInputRegister (mbfuncinput)
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000019A6 - 000019F7 (0x52 bytes), align: 1
+  Relative segment, address: CODE 00001A7A - 00001ACB (0x52 bytes), align: 1
   Segment part 9.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           eMBRegHoldingCB         000019A6        eMBFuncReadHoldingRegister (mbfuncholding)
+           eMBRegHoldingCB         00001A7A        eMBFuncReadHoldingRegister (mbfuncholding)
                                                    eMBFuncWriteHoldingRegister (mbfuncholding)
                                                    eMBFuncWriteMultipleHoldingRegister (mbfuncholding)
                RSTACK = 00000000 ( 00000002 )
@@ -1835,15 +1896,15 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 000019F8 - 000019FD (0x6 bytes), align: 1
+  Relative segment, address: CODE 00001ACC - 00001AD1 (0x6 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __exit                  000019FA 
-           ?C_EXIT                 000019FA 
-           ?C_FUNCALL              000019F8 
-           _exit                   000019F8        ?cstartup_call_main (?C_STARTUP)
-           exit                    000019F8        ?cstartup_call_main (?C_STARTUP)
+           __exit                  00001ACE 
+           ?C_EXIT                 00001ACE 
+           ?C_FUNCALL              00001ACC 
+           _exit                   00001ACC        ?cstartup_call_main (?C_STARTUP)
+           exit                    00001ACC        ?cstartup_call_main (?C_STARTUP)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?RESET
@@ -1864,38 +1925,38 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 000019FE, align: 1
+  Relative segment, address: CODE 00001AD2, align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?C_STARTUP              000019FE        Segment part 0 (?RESET)
-           __RESTART               000019FE 
+           ?C_STARTUP              00001AD2        Segment part 0 (?RESET)
+           __RESTART               00001AD2 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000019FE - 00001A09 (0xc bytes), align: 1
+  Relative segment, address: CODE 00001AD2 - 00001ADD (0xc bytes), align: 1
   Segment part 5.             Intra module refs:   Segment part 2
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A0A - 00001A0D (0x4 bytes), align: 1
+  Relative segment, address: CODE 00001ADE - 00001AE1 (0x4 bytes), align: 1
   Segment part 7.             Intra module refs:   Segment part 5
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?call_low_level_init    00001A0A 
+           ?call_low_level_init    00001ADE 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A0E - 00001A15 (0x8 bytes), align: 1
+  Relative segment, address: CODE 00001AE2 - 00001AE9 (0x8 bytes), align: 1
   Segment part 8.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?need_segment_init      00001A0E        ?<Segment init: NEAR_I> (main)
+           ?need_segment_init      00001AE2        ?<Segment init: NEAR_I> (main)
                                                    ?<Segment init: NEAR_Z> (heap_1)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A16 - 00001A21 (0xc bytes), align: 1
+  Relative segment, address: CODE 00001AEA - 00001AF5 (0xc bytes), align: 1
   Segment part 9.             Intra module refs:   ?call_low_level_init
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?cstartup_call_main     00001A16 
+           ?cstartup_call_main     00001AEA 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?S_EC_MUL_L02
@@ -1903,11 +1964,11 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A22 - 00001A31 (0x10 bytes), align: 1
+  Relative segment, address: CODE 00001AF6 - 00001B05 (0x10 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?S_EC_MUL_L02           00001A22        eMBPoll (mb)
+           ?S_EC_MUL_L02           00001AF6        eMBPoll (mb)
                                                    prvInitialiseTaskLists (tasks)
                                                    vTaskIncrementTick (tasks)
                                                    vTaskSwitchContext (tasks)
@@ -1920,11 +1981,11 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A32 - 00001A3B (0xa bytes), align: 1
+  Relative segment, address: CODE 00001B06 - 00001B0F (0xa bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?US_SHR_L02             00001A36        eMBFuncReadCoils (mbfunccoils)
+           ?US_SHR_L02             00001B0A        eMBFuncReadCoils (mbfunccoils)
                                                    eMBFuncWriteMultipleCoils (mbfunccoils)
 
     -------------------------------------------------------------------------
@@ -1933,11 +1994,11 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A3C - 00001A49 (0xe bytes), align: 1
+  Relative segment, address: CODE 00001B10 - 00001B1D (0xe bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?UL_SHR_L03             00001A44        prvSetupTimerInterrupt (port)
+           ?UL_SHR_L03             00001B18        prvSetupTimerInterrupt (port)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?PROLOGUE_L09
@@ -1945,83 +2006,83 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A4A - 00001A4B (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B1E - 00001B1F (0x2 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE14_L09         00001A4A        xTaskGenericCreate (tasks)
+           ?PROLOGUE14_L09         00001B1E        xTaskGenericCreate (tasks)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A4C - 00001A4D (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B20 - 00001B21 (0x2 bytes), align: 1
   Segment part 3.             Intra module refs:   ?PROLOGUE14_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE13_L09         00001A4C 
+           ?PROLOGUE13_L09         00001B20 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A4E - 00001A4F (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B22 - 00001B23 (0x2 bytes), align: 1
   Segment part 4.             Intra module refs:   ?PROLOGUE13_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE12_L09         00001A4E 
+           ?PROLOGUE12_L09         00001B22 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A50 - 00001A51 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B24 - 00001B25 (0x2 bytes), align: 1
   Segment part 5.             Intra module refs:   ?PROLOGUE12_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE11_L09         00001A50 
+           ?PROLOGUE11_L09         00001B24 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A52 - 00001A53 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B26 - 00001B27 (0x2 bytes), align: 1
   Segment part 6.             Intra module refs:   ?PROLOGUE11_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE10_L09         00001A52 
+           ?PROLOGUE10_L09         00001B26 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A54 - 00001A55 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B28 - 00001B29 (0x2 bytes), align: 1
   Segment part 7.             Intra module refs:   ?PROLOGUE10_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE9_L09          00001A54 
+           ?PROLOGUE9_L09          00001B28 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A56 - 00001A57 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B2A - 00001B2B (0x2 bytes), align: 1
   Segment part 8.             Intra module refs:   ?PROLOGUE9_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE8_L09          00001A56        eMBRTUReceive (mbrtu)
+           ?PROLOGUE8_L09          00001B2A        eMBRTUReceive (mbrtu)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A58 - 00001A59 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B2C - 00001B2D (0x2 bytes), align: 1
   Segment part 9.             Intra module refs:   ?PROLOGUE8_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE7_L09          00001A58        eMBRTUInit (mbrtu)
+           ?PROLOGUE7_L09          00001B2C        eMBRTUInit (mbrtu)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A5A - 00001A5B (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B2E - 00001B2F (0x2 bytes), align: 1
   Segment part 10.            Intra module refs:   ?PROLOGUE7_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE6_L09          00001A5A        eMBRTUSend (mbrtu)
+           ?PROLOGUE6_L09          00001B2E        eMBRTUSend (mbrtu)
                                                    prvAllocateTCBAndStack (tasks)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A5C - 00001A5D (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B30 - 00001B31 (0x2 bytes), align: 1
   Segment part 11.            Intra module refs:   ?PROLOGUE6_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE5_L09          00001A5C        eMBFuncReadHoldingRegister (mbfuncholding)
+           ?PROLOGUE5_L09          00001B30        eMBFuncReadHoldingRegister (mbfuncholding)
                                                    eMBFuncReadInputRegister (mbfuncinput)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A5E - 00001A5F (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B32 - 00001B33 (0x2 bytes), align: 1
   Segment part 12.            Intra module refs:   ?PROLOGUE5_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE4_L09          00001A5E        eMBFuncReadCoils (mbfunccoils)
+           ?PROLOGUE4_L09          00001B32        eMBFuncReadCoils (mbfunccoils)
                                                    eMBFuncWriteCoil (mbfunccoils)
                                                    eMBFuncWriteMultipleCoils (mbfunccoils)
                                                    eMBFuncWriteMultipleHoldingRegister (mbfuncholding)
@@ -2030,28 +2091,28 @@ CODE
                                                    xTaskResumeAll (tasks)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A60 - 00001A61 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B34 - 00001B35 (0x2 bytes), align: 1
   Segment part 13.            Intra module refs:   ?PROLOGUE4_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE3_L09          00001A60        xMBRTUReceiveFSM (mbrtu)
+           ?PROLOGUE3_L09          00001B34        xMBRTUReceiveFSM (mbrtu)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A62 - 00001A63 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B36 - 00001B37 (0x2 bytes), align: 1
   Segment part 14.            Intra module refs:   ?PROLOGUE3_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE2_L09          00001A62 
+           ?PROLOGUE2_L09          00001B36 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A64 - 00001A65 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B38 - 00001B39 (0x2 bytes), align: 1
   Segment part 15.            Intra module refs:   ?PROLOGUE2_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE1_L09          00001A64 
+           ?PROLOGUE1_L09          00001B38 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A66 - 00001A67 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B3A - 00001B3B (0x2 bytes), align: 1
   Segment part 16.            Intra module refs:   ?PROLOGUE1_L09
 
     -------------------------------------------------------------------------
@@ -2060,83 +2121,83 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A68 - 00001A69 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B3C - 00001B3D (0x2 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B14_L09       00001A68        xTaskGenericCreate (tasks)
+           ?EPILOGUE_B14_L09       00001B3C        xTaskGenericCreate (tasks)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A6A - 00001A6B (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B3E - 00001B3F (0x2 bytes), align: 1
   Segment part 3.             Intra module refs:   ?EPILOGUE_B14_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B13_L09       00001A6A 
+           ?EPILOGUE_B13_L09       00001B3E 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A6C - 00001A6D (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B40 - 00001B41 (0x2 bytes), align: 1
   Segment part 4.             Intra module refs:   ?EPILOGUE_B13_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B12_L09       00001A6C 
+           ?EPILOGUE_B12_L09       00001B40 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A6E - 00001A6F (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B42 - 00001B43 (0x2 bytes), align: 1
   Segment part 5.             Intra module refs:   ?EPILOGUE_B12_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B11_L09       00001A6E 
+           ?EPILOGUE_B11_L09       00001B42 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A70 - 00001A71 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B44 - 00001B45 (0x2 bytes), align: 1
   Segment part 6.             Intra module refs:   ?EPILOGUE_B11_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B10_L09       00001A70 
+           ?EPILOGUE_B10_L09       00001B44 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A72 - 00001A73 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B46 - 00001B47 (0x2 bytes), align: 1
   Segment part 7.             Intra module refs:   ?EPILOGUE_B10_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B9_L09        00001A72 
+           ?EPILOGUE_B9_L09        00001B46 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A74 - 00001A75 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B48 - 00001B49 (0x2 bytes), align: 1
   Segment part 8.             Intra module refs:   ?EPILOGUE_B9_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B8_L09        00001A74        eMBRTUReceive (mbrtu)
+           ?EPILOGUE_B8_L09        00001B48        eMBRTUReceive (mbrtu)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A76 - 00001A77 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B4A - 00001B4B (0x2 bytes), align: 1
   Segment part 9.             Intra module refs:   ?EPILOGUE_B8_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B7_L09        00001A76        eMBRTUInit (mbrtu)
+           ?EPILOGUE_B7_L09        00001B4A        eMBRTUInit (mbrtu)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A78 - 00001A79 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B4C - 00001B4D (0x2 bytes), align: 1
   Segment part 10.            Intra module refs:   ?EPILOGUE_B7_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B6_L09        00001A78        eMBRTUSend (mbrtu)
+           ?EPILOGUE_B6_L09        00001B4C        eMBRTUSend (mbrtu)
                                                    prvAllocateTCBAndStack (tasks)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A7A - 00001A7B (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B4E - 00001B4F (0x2 bytes), align: 1
   Segment part 11.            Intra module refs:   ?EPILOGUE_B6_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B5_L09        00001A7A        eMBFuncReadHoldingRegister (mbfuncholding)
+           ?EPILOGUE_B5_L09        00001B4E        eMBFuncReadHoldingRegister (mbfuncholding)
                                                    eMBFuncReadInputRegister (mbfuncinput)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A7C - 00001A7D (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B50 - 00001B51 (0x2 bytes), align: 1
   Segment part 12.            Intra module refs:   ?EPILOGUE_B5_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B4_L09        00001A7C        eMBFuncReadCoils (mbfunccoils)
+           ?EPILOGUE_B4_L09        00001B50        eMBFuncReadCoils (mbfunccoils)
                                                    eMBFuncWriteCoil (mbfunccoils)
                                                    eMBFuncWriteMultipleCoils (mbfunccoils)
                                                    eMBFuncWriteMultipleHoldingRegister (mbfuncholding)
@@ -2145,32 +2206,32 @@ CODE
                                                    xTaskResumeAll (tasks)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A7E - 00001A7F (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B52 - 00001B53 (0x2 bytes), align: 1
   Segment part 13.            Intra module refs:   ?EPILOGUE_B4_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B3_L09        00001A7E        xMBRTUReceiveFSM (mbrtu)
+           ?EPILOGUE_B3_L09        00001B52        xMBRTUReceiveFSM (mbrtu)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A80 - 00001A81 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B54 - 00001B55 (0x2 bytes), align: 1
   Segment part 14.            Intra module refs:   ?EPILOGUE_B3_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B2_L09        00001A80 
+           ?EPILOGUE_B2_L09        00001B54 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A82 - 00001A83 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00001B56 - 00001B57 (0x2 bytes), align: 1
   Segment part 15.            Intra module refs:   ?EPILOGUE_B2_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B1_L09        00001A82 
+           ?EPILOGUE_B1_L09        00001B56 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001A84 - 00001A8D (0xa bytes), align: 1
+  Relative segment, address: CODE 00001B58 - 00001B61 (0xa bytes), align: 1
   Segment part 16.            Intra module refs:   ?EPILOGUE_B1_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B0_L09        00001A84 
+           ?EPILOGUE_B0_L09        00001B58 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?REGISTER_CGREGR4_L10
@@ -2178,12 +2239,12 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A8E, align: 1
+  Relative segment, address: CODE 00001B62, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?Register_R4_is_cg_reg
-                                   00001A8E        eMBFuncReadHoldingRegister (mbfuncholding)
+                                   00001B62        eMBFuncReadHoldingRegister (mbfuncholding)
                                                    eMBFuncReadInputRegister (mbfuncinput)
                                                    eMBRTUInit (mbrtu)
                                                    eMBRTUReceive (mbrtu)
@@ -2197,12 +2258,12 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A8E, align: 1
+  Relative segment, address: CODE 00001B62, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?Register_R5_is_cg_reg
-                                   00001A8E        eMBRTUInit (mbrtu)
+                                   00001B62        eMBRTUInit (mbrtu)
                                                    eMBRTUSend (mbrtu)
                                                    prvAllocateTCBAndStack (tasks)
 
@@ -2212,12 +2273,12 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A8E, align: 1
+  Relative segment, address: CODE 00001B62, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?Register_R6_is_cg_reg
-                                   00001A8E        eMBRTUInit (mbrtu)
+                                   00001B62        eMBRTUInit (mbrtu)
                                                    eMBRTUReceive (mbrtu)
                                                    xTaskGenericCreate (tasks)
 
@@ -2227,12 +2288,12 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A8E, align: 1
+  Relative segment, address: CODE 00001B62, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?Register_R7_is_cg_reg
-                                   00001A8E        eMBRTUReceive (mbrtu)
+                                   00001B62        eMBRTUReceive (mbrtu)
                                                    xTaskGenericCreate (tasks)
 
     -------------------------------------------------------------------------
@@ -2241,12 +2302,12 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A8E, align: 1
+  Relative segment, address: CODE 00001B62, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?Register_R8_is_cg_reg
-                                   00001A8E        xTaskGenericCreate (tasks)
+                                   00001B62        xTaskGenericCreate (tasks)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?REGISTER_CGREGR9_L10
@@ -2254,12 +2315,12 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A8E, align: 1
+  Relative segment, address: CODE 00001B62, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?Register_R9_is_cg_reg
-                                   00001A8E        xTaskGenericCreate (tasks)
+                                   00001B62        xTaskGenericCreate (tasks)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?REGISTER_CGREGR10_L10
@@ -2267,12 +2328,12 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A8E, align: 1
+  Relative segment, address: CODE 00001B62, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?Register_R10_is_cg_reg
-                                   00001A8E        xTaskGenericCreate (tasks)
+                                   00001B62        xTaskGenericCreate (tasks)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?REGISTER_CGREGR11_L10
@@ -2280,12 +2341,12 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A8E, align: 1
+  Relative segment, address: CODE 00001B62, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?Register_R11_is_cg_reg
-                                   00001A8E        xTaskGenericCreate (tasks)
+                                   00001B62        xTaskGenericCreate (tasks)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?REGISTER_CGREGR12_L10
@@ -2293,12 +2354,12 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A8E, align: 1
+  Relative segment, address: CODE 00001B62, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?Register_R12_is_cg_reg
-                                   00001A8E        xTaskGenericCreate (tasks)
+                                   00001B62        xTaskGenericCreate (tasks)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?REGISTER_CGREGR13_L10
@@ -2306,12 +2367,12 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A8E, align: 1
+  Relative segment, address: CODE 00001B62, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?Register_R13_is_cg_reg
-                                   00001A8E        xTaskGenericCreate (tasks)
+                                   00001B62        xTaskGenericCreate (tasks)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?low_level_init
@@ -2319,11 +2380,11 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A8E - 00001A91 (0x4 bytes), align: 1
+  Relative segment, address: CODE 00001B62 - 00001B65 (0x4 bytes), align: 1
   Segment part 3.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __low_level_init        00001A8E        ?call_low_level_init (?C_STARTUP)
+           __low_level_init        00001B62        ?call_low_level_init (?C_STARTUP)
                RSTACK = 00000000 ( 00000002 )
 
     -------------------------------------------------------------------------
@@ -2332,11 +2393,11 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001A92 - 00001AA3 (0x12 bytes), align: 1
+  Relative segment, address: CODE 00001B66 - 00001B77 (0x12 bytes), align: 1
   Segment part 3.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           memset                  00001A92        prvAllocateTCBAndStack (tasks)
+           memset                  00001B66        prvAllocateTCBAndStack (tasks)
                RSTACK = 00000000 ( 00000002 )
 
     -------------------------------------------------------------------------
@@ -2345,32 +2406,32 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001AA4 - 00001AAB (0x8 bytes), align: 1
+  Relative segment, address: CODE 00001B78 - 00001B7F (0x8 bytes), align: 1
   Segment part 3.             Intra module refs:   __segment_init
            LOCAL                   ADDRESS         
            =====                   =======         
-           __memclr                00001AA4 
+           __memclr                00001B78 
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001AAC - 00001AB3 (0x8 bytes), align: 1
+  Relative segment, address: CODE 00001B80 - 00001B87 (0x8 bytes), align: 1
   Segment part 4.             Intra module refs:   __segment_init
            LOCAL                   ADDRESS         
            =====                   =======         
-           __flashcpy              00001AAC 
+           __flashcpy              00001B80 
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001AB4 - 00001ABF (0xc bytes), align: 1
+  Relative segment, address: CODE 00001B88 - 00001B93 (0xc bytes), align: 1
   Segment part 5.             Intra module refs:   __flashcpy
                                                    __memclr
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001AC0 - 00001AF3 (0x34 bytes), align: 1
+  Relative segment, address: CODE 00001B94 - 00001BC7 (0x34 bytes), align: 1
   Segment part 6.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __segment_init          00001AC0        ?need_segment_init (?C_STARTUP)
+           __segment_init          00001B94        ?need_segment_init (?C_STARTUP)
                calls direct
                RSTACK = 00000000 ( 00000002 )
 
@@ -2380,16 +2441,16 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00001AF4 - 00001B17 (0x24 bytes), align: 1
+  Relative segment, address: CODE 00001BC8 - 00001BEB (0x24 bytes), align: 1
   Segment part 3.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           strncpy                 00001AF4        prvInitialiseTCBVariables (tasks)
+           strncpy                 00001BC8        prvInitialiseTCBVariables (tasks)
                CSTACK = 00000000 ( 00000004 )
                RSTACK = 00000000 ( 00000002 )
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00001B18 - 00001B21 (0xa bytes), align: 1
+  Relative segment, address: CODE 00001BEC - 00001BF5 (0xa bytes), align: 1
   Segment part 4.             Intra module refs:   strncpy
 
     *************************************************************************
@@ -2446,14 +2507,15 @@ Module                  CODE          DATA
 ?memset                18
 ?segment_init          80
 ?strncpy               46
-IO_Port                36                    2
-  + shared                                   2
-LCD12864                                     3
+IO_Port                42                    2
+  + shared                                   4
+LCD12864              140                    1
+SN74HC573              56             1
 User_Modbus_API       180
 heap_1                106           402
   + shared              6
 list                  228
-main                  161            13
+main                  171            13
   + shared              6
 mb                    636            47
 mbcrc                 588
@@ -2472,7 +2534,7 @@ tasks               1 441            96
 N/A (command line)                   96
 N/A (alignment)
 ----------          -----     --    ---     --
-Total:              6 981     16    701     22
+Total:              7 193     16    702     22
   + common              4
 
 
@@ -2491,9 +2553,9 @@ INTVEC               CODE          00000000 - 00000003           4   com    1
 ?FILL3               CODE          00000048 - 00000053           C   rel    0
 ?FILL4               CODE          0000005C - 0000007F          24   rel    0
 NEAR_F               CODE          00000080 - 0000027F         200   rel    0
-CODE                 CODE          00000280 - 00001B21        18A2   rel    1
-INITTAB              CODE          00001B22 - 00001B2D           C   rel    0
-NEAR_ID              CODE          00001B2E - 00001B58          2B   rel    0
+CODE                 CODE          00000280 - 00001BF5        1976   rel    1
+INITTAB              CODE          00001BF6 - 00001C01           C   rel    0
+NEAR_ID              CODE          00001C02 - 00001C2C          2B   rel    0
 ABSOLUTE             DATA               0000001F                     rel    0
                      DATA               00000020                   
                      DATA               00000021                   
@@ -2511,7 +2573,7 @@ ABSOLUTE             DATA               0000001F                     rel    0
 CSTACK               DATA          00000100 - 0000013F          40   dse    0
 RSTACK               DATA          00000140 - 0000015F          20   dse    0
 NEAR_I               DATA          00000160 - 0000018A          2B   rel    0
-NEAR_Z               DATA          0000018B - 000003BC         232   rel    0
+NEAR_Z               DATA          0000018B - 000003BD         233   rel    0
                      CODE          00000030 - 00000033           4  aseg  
                      CODE          00000044 - 00000047           4  aseg  
                      CODE          00000054 - 0000005B           8  aseg  
@@ -2522,8 +2584,8 @@ NEAR_Z               DATA          0000018B - 000003BC         232   rel    0
                 *                                      *
                 ****************************************
 
- 6 877 bytes of CODE memory (+ 16 absolute, 108 range fill )
-   701 bytes of DATA memory (+ 22 absolute  )
+ 7 089 bytes of CODE memory (+ 16 absolute, 108 range fill )
+   702 bytes of DATA memory (+ 22 absolute  )
 
 Errors: none
 Warnings: none

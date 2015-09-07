@@ -29,7 +29,7 @@
         </option>
         <option>
           <name>DDFile</name>
-          <state>none</state>
+          <state>$TOOLKIT_DIR$\Config\iopwm316.ddf</state>
         </option>
         <option>
           <name>CInput</name>
@@ -73,7 +73,7 @@
         </option>
         <option>
           <name>CDynDriver</name>
-          <state>JTAGICEMKIIAVR</state>
+          <state>SIMAVR</state>
         </option>
         <option>
           <name>DebuggerUseUbrofResetVector</name>
@@ -243,7 +243,7 @@
         </option>
         <option>
           <name>OAVRONEDebugPort</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>OAVRONEDebugWireDebugPort</name>

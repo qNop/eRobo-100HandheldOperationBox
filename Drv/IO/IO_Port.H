@@ -4,7 +4,7 @@
 
 /*LCD_PWM*/
 #define  LCD_PWM                     0
-#define  PIN_LCD_PWM                 PIND
+#define  PORT_LCD_PWM                PORTD
 #define  DDR_LCD_PWM                 DDRD   
  
 /*LCD_LE*/
