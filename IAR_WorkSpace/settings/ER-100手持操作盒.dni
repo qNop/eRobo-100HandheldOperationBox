@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=1865286462
+Checksum=-973981019
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -33,9 +33,7 @@ Category=_ 0
 LoggingEnabled=_ 0
 LogFile=_ ""
 [Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.70.6" 1 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\Drv\LCD12864\LCD12864.c}.133.3" 1 0 0 0 "" 0 ""
-Count=2
+Count=0
 [Aliases]
 Count=0
 SuppressDialog=0

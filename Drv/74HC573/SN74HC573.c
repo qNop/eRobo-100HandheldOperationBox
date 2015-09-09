@@ -13,7 +13,7 @@ unsigned char Sn_Get_Data()
 void Sn_Output_KeyCode(unsigned char KeyCode)
 {
   /*存储相应状态*/
-  Sn74hc573_Data |= (KeyCode<<2);
+  Sn74hc573_Data = (KeyCode<<2);
   /*LE输出高电平*/
   /*数据*/
   OUTPUT_LCD_DB(Sn74hc573_Data);

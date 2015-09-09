@@ -35,4 +35,6 @@ Sys_Error Set_Cursor(unsigned char x,unsigned char y);
 Sys_Error Write_Data(unsigned char Data);
 Sys_Error Write_Cmd(unsigned char Cmd);
 
+Sys_Error Display_Char(unsigned char x,unsigned char y,unsigned char Char);
+Sys_Error Display_String(unsigned char x,unsigned char y,unsigned char *pString);
 #endif 

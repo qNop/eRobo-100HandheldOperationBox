@@ -1,10 +1,78 @@
-"E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\FreeModbus\modbus\functions\mbfunccoils_m.c"
+"E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\FreeModbus\modbus\functions\mbfunccoils_m.c"
 -std=c99
 -ferror-limit=100
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\Doc
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\Drv\TIME
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\Drv\UART
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\Drv\IO
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\FreeModbus\modbus\rtu
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\FreeModbus\modbus\include
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\FreeModbus\modbus\functions
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\FreeModbus
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\FreeRTOS_V7.1.1
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\FreeRTOS_V7.1.1\Source
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\FreeRTOS_V7.1.1\Source\include
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\FreeModbus\port
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\FreeModbus\port\src
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\Drv\74HC573
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\Drv\DELAY
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\..\Drv\LCD12864
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\inc\clib
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\Doc
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\Drv\TIME
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\Drv\UART
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\Drv\IO
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\FreeModbus\modbus\rtu
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\FreeModbus\modbus\include
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\FreeModbus\modbus\functions
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\FreeModbus
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\FreeRTOS_V7.1.1
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\FreeRTOS_V7.1.1\Source
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\FreeRTOS_V7.1.1\Source\include
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\FreeModbus\port
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\FreeModbus\port\src
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\Drv\74HC573
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\Drv\DELAY
+-I
+E:\陈世豪\工作\微型机器人\项目工程\手持操作盒\程序文件\eRobo-100eRobo-100HandheldOperationBox\Drv\LCD12864
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -129,10 +197,10 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\inc\clib
 -D__LONG_DOUBLE_ALIGN__=1
 -D__NAN_HAS_HIGH_MANTISSA_BIT_SET__=1
 -D__SUBNORMAL_FLOATING_POINTS__=1
--D__SIZE_T_TYPE__=unsigned char
--D__SIZE_T_MAX__=0xff
--D__PTRDIFF_T_TYPE__=signed char
--D__PTRDIFF_T_MAX__=127
+-D__SIZE_T_TYPE__=unsigned int
+-D__SIZE_T_MAX__=0xffffU
+-D__PTRDIFF_T_TYPE__=signed int
+-D__PTRDIFF_T_MAX__=32767
 -D__PTRDIFF_T_MIN__=(-__PTRDIFF_T_MAX__-1)
 -D__INTPTR_T_TYPE__=signed int
 -D__INTPTR_T_MAX__=32767
@@ -141,8 +209,8 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\inc\clib
 -D__UINTPTR_T_MAX__=0xffffU
 -D__INTPTR_SIZE_PREFIX__=""
 -D__JMP_BUF_ELEMENT_TYPE__=unsigned char
--D__JMP_BUF_NUM_ELEMENTS__=21
--D__TID__=0x5a01
+-D__JMP_BUF_NUM_ELEMENTS__=22
+-D__TID__=0x5a32
 -D__VER__=630
 -D__SUBVERSION__=2
 -D__BUILD_NUMBER__=712
@@ -155,7 +223,7 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\inc\clib
 -D__WCHAR_T_TYPE__=unsigned short int
 -D__WCHAR_T_SIZE__=2
 -D__WCHAR_T_MAX__=0xffff
--D__DEF_PTR_MEM__=__tiny
+-D__DEF_PTR_MEM__=__near
 -D__DATA_MEM0__=__tiny
 -D__DATA_MEM0_POINTER_OK__=1
 -D__DATA_MEM0_UNIQUE_POINTER__=1
@@ -164,40 +232,40 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\inc\clib
 -D__DATA_MEM0_UINTPTR_TYPE__=unsigned char
 -D__DATA_MEM0_INTPTR_SIZE_PREFIX__="hh"
 -D__DATA_MEM0_MAX_SIZE__=0x7f
--D__DATA_MEM0_HEAP_SEGMENT__="TINY_HEAP"
--D__DATA_MEM0_PAGE_SIZE__=0
--D__DATA_MEM0_HEAP__=0
--D__DATA_MEM1__=__tinyflash
+-D__DATA_MEM1__=__near
 -D__DATA_MEM1_POINTER_OK__=1
 -D__DATA_MEM1_UNIQUE_POINTER__=1
--D__DATA_MEM1_VAR_OK__=0
--D__DATA_MEM1_INDEX_TYPE__=signed char
--D__DATA_MEM1_SIZE_TYPE__=unsigned char
--D__DATA_MEM1_INTPTR_TYPE__=signed char
--D__DATA_MEM1_UINTPTR_TYPE__=unsigned char
--D__DATA_MEM1_INTPTR_SIZE_PREFIX__="hh"
--D__DATA_MEM1_MAX_SIZE__=0x7f
--D__DATA_MEM2__=__flash
+-D__DATA_MEM1_VAR_OK__=1
+-D__DATA_MEM1_INDEX_TYPE__=int
+-D__DATA_MEM1_SIZE_TYPE__=unsigned int
+-D__DATA_MEM1_INTPTR_TYPE__=short int
+-D__DATA_MEM1_UINTPTR_TYPE__=unsigned short int
+-D__DATA_MEM1_INTPTR_SIZE_PREFIX__="h"
+-D__DATA_MEM1_MAX_SIZE__=0x7fff
+-D__DATA_MEM1_HEAP_SEGMENT__="NEAR_HEAP"
+-D__DATA_MEM1_PAGE_SIZE__=0
+-D__DATA_MEM1_HEAP__=1
+-D__DATA_MEM2__=__tinyflash
 -D__DATA_MEM2_POINTER_OK__=1
 -D__DATA_MEM2_UNIQUE_POINTER__=1
 -D__DATA_MEM2_VAR_OK__=0
--D__DATA_MEM2_INDEX_TYPE__=int
--D__DATA_MEM2_SIZE_TYPE__=unsigned int
--D__DATA_MEM2_INTPTR_TYPE__=short int
--D__DATA_MEM2_UINTPTR_TYPE__=unsigned short int
--D__DATA_MEM2_INTPTR_SIZE_PREFIX__="h"
--D__DATA_MEM2_MAX_SIZE__=0x7fff
--D__DATA_MEM3__=__io
+-D__DATA_MEM2_INDEX_TYPE__=signed char
+-D__DATA_MEM2_SIZE_TYPE__=unsigned char
+-D__DATA_MEM2_INTPTR_TYPE__=signed char
+-D__DATA_MEM2_UINTPTR_TYPE__=unsigned char
+-D__DATA_MEM2_INTPTR_SIZE_PREFIX__="hh"
+-D__DATA_MEM2_MAX_SIZE__=0x7f
+-D__DATA_MEM3__=__flash
 -D__DATA_MEM3_POINTER_OK__=1
 -D__DATA_MEM3_UNIQUE_POINTER__=1
 -D__DATA_MEM3_VAR_OK__=0
--D__DATA_MEM3_INDEX_TYPE__=signed char
--D__DATA_MEM3_SIZE_TYPE__=unsigned char
--D__DATA_MEM3_INTPTR_TYPE__=signed char
--D__DATA_MEM3_UINTPTR_TYPE__=unsigned char
--D__DATA_MEM3_INTPTR_SIZE_PREFIX__="hh"
--D__DATA_MEM3_MAX_SIZE__=0xff
--D__DATA_MEM4__=__generic
+-D__DATA_MEM3_INDEX_TYPE__=int
+-D__DATA_MEM3_SIZE_TYPE__=unsigned int
+-D__DATA_MEM3_INTPTR_TYPE__=short int
+-D__DATA_MEM3_UINTPTR_TYPE__=unsigned short int
+-D__DATA_MEM3_INTPTR_SIZE_PREFIX__="h"
+-D__DATA_MEM3_MAX_SIZE__=0x7fff
+-D__DATA_MEM4__=__eeprom
 -D__DATA_MEM4_POINTER_OK__=1
 -D__DATA_MEM4_UNIQUE_POINTER__=1
 -D__DATA_MEM4_VAR_OK__=0
@@ -206,37 +274,71 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\inc\clib
 -D__DATA_MEM4_INTPTR_TYPE__=short int
 -D__DATA_MEM4_UINTPTR_TYPE__=unsigned short int
 -D__DATA_MEM4_INTPTR_SIZE_PREFIX__="h"
--D__DATA_MEM4_MAX_SIZE__=0x7fff
+-D__DATA_MEM4_MAX_SIZE__=0xffff
+-D__DATA_MEM5__=__io
+-D__DATA_MEM5_POINTER_OK__=1
+-D__DATA_MEM5_UNIQUE_POINTER__=1
+-D__DATA_MEM5_VAR_OK__=0
+-D__DATA_MEM5_INDEX_TYPE__=signed char
+-D__DATA_MEM5_SIZE_TYPE__=unsigned char
+-D__DATA_MEM5_INTPTR_TYPE__=signed char
+-D__DATA_MEM5_UINTPTR_TYPE__=unsigned char
+-D__DATA_MEM5_INTPTR_SIZE_PREFIX__="hh"
+-D__DATA_MEM5_MAX_SIZE__=0xff
+-D__DATA_MEM6__=__ext_io
+-D__DATA_MEM6_POINTER_OK__=1
+-D__DATA_MEM6_UNIQUE_POINTER__=1
+-D__DATA_MEM6_VAR_OK__=0
+-D__DATA_MEM6_INDEX_TYPE__=int
+-D__DATA_MEM6_SIZE_TYPE__=unsigned int
+-D__DATA_MEM6_INTPTR_TYPE__=short int
+-D__DATA_MEM6_UINTPTR_TYPE__=unsigned short int
+-D__DATA_MEM6_INTPTR_SIZE_PREFIX__="h"
+-D__DATA_MEM6_MAX_SIZE__=0xffff
+-D__DATA_MEM7__=__generic
+-D__DATA_MEM7_POINTER_OK__=1
+-D__DATA_MEM7_UNIQUE_POINTER__=1
+-D__DATA_MEM7_VAR_OK__=0
+-D__DATA_MEM7_INDEX_TYPE__=long
+-D__DATA_MEM7_SIZE_TYPE__=unsigned long
+-D__DATA_MEM7_INTPTR_TYPE__=long int
+-D__DATA_MEM7_UINTPTR_TYPE__=unsigned long int
+-D__DATA_MEM7_INTPTR_SIZE_PREFIX__="l"
+-D__DATA_MEM7_MAX_SIZE__=0x7fffffff
 -D__CODE_MEM0__=__nearfunc
 -D__CODE_MEM0_POINTER_OK__=1
 -D__CODE_MEM0_UNIQUE_POINTER__=1
 -D__CODE_MEM0_VAR_OK__=1
--D__HEAP_MEM0__=0
+-D__HEAP_MEM0__=1
 -D__MULTIPLE_HEAPS__=0
--D__DEF_HEAP_MEM__=__tiny
+-D__DEF_HEAP_MEM__=__near
 -D__PRAGMA_PACK_ON__=1
 -D__MULTIPLE_INHERITANCE__=1
--D__CORE__=0
--D__CPU__=0
+-D__AT90PWM316__=1
+-D__CORE__=3
+-D__CPU__=3
+-D__HAS_EEPROM__=1
+-D__HAS_ENHANCED_CORE__=1
+-D__HAS_MUL__=1
 -D__ICCAVR__=1
--D__MEMORY_MODEL__=1
+-D__MEMORY_MODEL__=2
 -D__VERSION_3_CALLS__=1
 -D__PLAIN_INT_BITFIELD_IS_SIGNED__=1
 -D__HAS_LOCATED_DECLARATION__=1
 -D__IAR_COMPILERBASE__=593417
--D__DATE__="Aug 31 2015"
--D__TIME__="13:25:56"
+-D__DATE__="Sep  9 2015"
+-D__TIME__="10:01:49"
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1
 -D__EDG_TYPE_TRAITS_ENABLED=1
 -D__EDG__=1
 -D__EDG_VERSION__=403
--D__EDG_SIZE_TYPE__=unsigned char
--D__EDG_PTRDIFF_TYPE__=signed char
+-D__EDG_SIZE_TYPE__=unsigned int
+-D__EDG_PTRDIFF_TYPE__=int
 -D__EDG_JMP_BUF_ELEMENT_TYPE=unsigned char
--D__EDG_JMP_BUF_NUM_ELEMENTS=21
--D__EDG_DELTA_TYPE=signed char
+-D__EDG_JMP_BUF_NUM_ELEMENTS=22
+-D__EDG_DELTA_TYPE=int
 -D__EDG_VIRTUAL_FUNCTION_INDEX_TYPE=unsigned short
 -D__EDG_VAR_HANDLE_TYPE=unsigned short
 -D__EDG_REGION_NUMBER_TYPE=unsigned short

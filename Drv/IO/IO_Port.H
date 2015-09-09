@@ -93,11 +93,11 @@
 
 #define  CONFIG_PORT_OUT(DDR,PIN)     DDR |= (1<<(PIN))
 /*获取启动引脚电平  常闭态 高电平为有效*/
-#define  GET_START_PIN()      ((START_PIN&(1<<START))?1:0)
+#define  GET_START_PIN()      ((PIN_START&(1<<START))?0:1)
 /*获取送丝引脚电平  常闭态 高电平为有效*/
-#define  GET_RESET_PIN()       ((RESET_PIN&(1<<RESET))?1:0)
+#define  GET_RESET_PIN()      ((PIN_RESET&(1<<RESET))?0:1)
 /*获取停止引脚电平  常开态 低电平为有效*/
-#define  GET_STOP_PIN()       ((STOP_PIN&(1<<STOP))?1:0)
+#define  GET_STOP_PIN()       ((PIN_STOP&(1<<STOP))?0:1)
 
 void INIT_IO(void);   /*io初始化*/
 
