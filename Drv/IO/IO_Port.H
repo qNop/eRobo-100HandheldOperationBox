@@ -54,6 +54,7 @@
 #define  RXD                          4
 #define  PIN_RXD                      PIND
 #define  DDR_RXD                      DDRD
+#define  PORT_RXD                     PORTD
 /*KEY_4*/
 #define  KEY_4                          4
 #define  PIN_KEY_4                    PINC

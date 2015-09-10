@@ -83,11 +83,11 @@ typedef enum
 } eMBParity;
 
 /* ----------------------- Supporting functions -----------------------------*/
-BOOL            xMBPortEventInit( void );
+//BOOL            xMBPortEventInit( void );
 
-BOOL            xMBPortEventPost( eMBEventType eEvent );
+//BOOL            xMBPortEventPost( eMBEventType eEvent );
 
-BOOL            xMBPortEventGet(  /*@out@ */ eMBEventType * eEvent );
+//BOOL            xMBPortEventGet(  /*@out@ */ eMBEventType * eEvent );
 
 BOOL            xMBMasterPortEventInit( void );
 
@@ -95,15 +95,9 @@ BOOL            xMBMasterPortEventPost( eMBMasterEventType eEvent );
 
 BOOL            xMBMasterPortEventGet(  /*@out@ */ eMBMasterEventType * eEvent );
 
-void            vMBMasterOsResInit( void );
-
-BOOL            xMBMasterRunResTake( ULONG time );
-
-void            vMBMasterRunResRelease( void );
-
 /* ----------------------- Serial port functions ----------------------------*/
 
-BOOL            xMBPortSerialInit( UCHAR ucPort, ULONG ulBaudRate,
+/*BOOL            xMBPortSerialInit( UCHAR ucPort, ULONG ulBaudRate,
                                    UCHAR ucDataBits, eMBParity eParity );
 
 void            vMBPortClose( void );
@@ -114,14 +108,14 @@ void            vMBPortSerialEnable( BOOL xRxEnable, BOOL xTxEnable );
 
 INLINE BOOL     xMBPortSerialGetByte( CHAR * pucByte );
 
-INLINE BOOL     xMBPortSerialPutByte( CHAR ucByte );
+INLINE BOOL     xMBPortSerialPutByte( CHAR ucByte );*/
 
 BOOL            xMBMasterPortSerialInit( UCHAR ucPort, ULONG ulBaudRate,
                                    UCHAR ucDataBits, eMBParity eParity );
 
 void            vMBMasterPortClose( void );
 
-void            xMBMasterPortSerialClose( void );
+//void            xMBMasterPortSerialClose( void );
 
 void            vMBMasterPortSerialEnable( BOOL xRxEnable, BOOL xTxEnable );
 
@@ -130,13 +124,13 @@ INLINE BOOL     xMBMasterPortSerialGetByte( CHAR * pucByte );
 INLINE BOOL     xMBMasterPortSerialPutByte( CHAR ucByte );
 
 /* ----------------------- Timers functions ---------------------------------*/
-BOOL            xMBPortTimersInit( void );
+//BOOL            xMBPortTimersInit( void );
 
-void            xMBPortTimersClose( void );
+//void            xMBPortTimersClose( void );
 
-INLINE void     vMBPortTimersEnable( void );
+//INLINE void     vMBPortTimersEnable( void );
 
-INLINE void     vMBPortTimersDisable( void );
+//INLINE void     vMBPortTimersDisable( void );
 
 BOOL            xMBMasterPortTimersInit( USHORT usTimeOut50us );
 

@@ -47,7 +47,7 @@
 #if MB_MASTER_RTU_ENABLED > 0
 /* ----------------------- Defines ------------------------------------------*/
 #define MB_SER_PDU_SIZE_MIN     4       /*!< Minimum size of a Modbus RTU frame. */
-#define MB_SER_PDU_SIZE_MAX     256     /*!< Maximum size of a Modbus RTU frame. */
+#define MB_SER_PDU_SIZE_MAX     32     /*!< Maximum size of a Modbus RTU frame. */
 #define MB_SER_PDU_SIZE_CRC     2       /*!< Size of CRC field in PDU. */
 #define MB_SER_PDU_ADDR_OFF     0       /*!< Offset of slave address in Ser-PDU. */
 #define MB_SER_PDU_PDU_OFF      1       /*!< Offset of Modbus-PDU in Ser-PDU. */
@@ -160,7 +160,7 @@ eMBMasterRTUReceive( UCHAR * pucRcvAddress, UCHAR ** pucFrame, USHORT * pusLengt
     eMBErrorCode    eStatus = MB_ENOERR;
 
     ENTER_CRITICAL_SECTION(  );
-    assert_param( usMasterRcvBufferPos < MB_SER_PDU_SIZE_MAX );
+    assert( usMasterRcvBufferPos < MB_SER_PDU_SIZE_MAX );
 
     /* Length and CRC check */
     if( ( usMasterRcvBufferPos >= MB_SER_PDU_SIZE_MIN )
@@ -235,7 +235,7 @@ xMBMasterRTUReceiveFSM( void )
     BOOL            xTaskNeedSwitch = FALSE;
     UCHAR           ucByte;
 
-    assert_param(( eSndState == STATE_M_TX_IDLE ) || ( eSndState == STATE_M_TX_XFWR ));
+    assert(( eSndState == STATE_M_TX_IDLE ) || ( eSndState == STATE_M_TX_XFWR ));
 
     /* Always read the character. */
     ( void )xMBMasterPortSerialGetByte( ( CHAR * ) & ucByte );
@@ -248,7 +248,6 @@ xMBMasterRTUReceiveFSM( void )
     case STATE_M_RX_INIT:
         vMBMasterPortTimersT35Enable( );
         break;
-
         /* In the error state we wait until all characters in the
          * damaged frame are transmitted.
          */
@@ -271,9 +270,11 @@ xMBMasterRTUReceiveFSM( void )
         usMasterRcvBufferPos = 0;
         ucMasterRTURcvBuf[usMasterRcvBufferPos++] = ucByte;
         eRcvState = STATE_M_RX_RCV;
-
+               
+        #ifndef DEBUG
         /* Enable t3.5 timers. */
         vMBMasterPortTimersT35Enable( );
+        #endif
         break;
 
         /* We are currently receiving a frame. Reset the timer after
@@ -301,7 +302,7 @@ xMBMasterRTUTransmitFSM( void )
 {
     BOOL            xNeedPoll = FALSE;
 
-    assert_param( eRcvState == STATE_M_RX_IDLE );
+    assert( eRcvState == STATE_M_RX_IDLE );
 
     switch ( eSndState )
     {
@@ -370,7 +371,7 @@ xMBMasterRTUTimerExpired(void)
 
 		/* Function called in an illegal state. */
 	default:
-		assert_param(
+		assert(
 				( eRcvState == STATE_M_RX_INIT ) || ( eRcvState == STATE_M_RX_RCV ) ||
 				( eRcvState == STATE_M_RX_ERROR ) || ( eRcvState == STATE_M_RX_IDLE ));
 		break;
@@ -390,7 +391,7 @@ xMBMasterRTUTimerExpired(void)
 		break;
 		/* Function called in an illegal state. */
 	default:
-		assert_param(
+		assert(
 				( eSndState == STATE_M_TX_XFWR ) || ( eSndState == STATE_M_TX_IDLE ));
 		break;
 	}

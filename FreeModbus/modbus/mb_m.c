@@ -185,8 +185,6 @@ eMBMasterInit( eMBMode eMode, UCHAR ucPort, ULONG ulBaudRate, eMBParity eParity 
 		{
 			eMBState = STATE_DISABLED;
 		}
-		/* initialize the OS resource for modbus master. */
-		vMBMasterOsResInit();
 	}
 	return eStatus;
 }
@@ -335,7 +333,6 @@ eMBMasterPoll( void )
             }
             else {
             	vMBMasterCBRequestScuuess( );
-            	vMBMasterRunResRelease( );
             }
             break;
 
@@ -363,7 +360,6 @@ eMBMasterPoll( void )
 						ucMBFrame, usMBMasterGetPDUSndLength());
 				break;
 			}
-			vMBMasterRunResRelease();
         	break;
         }
     }

@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=-973981019
+Checksum=-1805632673
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -33,7 +33,12 @@ Category=_ 0
 LoggingEnabled=_ 0
 LogFile=_ ""
 [Breakpoints]
-Count=0
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\User_Modbus_API.c}.100.4" 1 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\FreeModbus\modbus\mb_m.c}.295.13" 1 0 0 0 "" 0 ""
+Bp2=_ "STD_CODE" "{$PROJ_DIR$\..\FreeModbus\modbus\mb_m.c}.281.4" 1 0 0 0 "" 0 ""
+Bp3=_ "STD_CODE" "{$PROJ_DIR$\..\FreeModbus\modbus\mb_m.c}.348.4" 1 0 0 0 "" 0 ""
+Bp4=_ "STD_CODE" "{$PROJ_DIR$\..\FreeModbus\modbus\rtu\mbrtu_m.c}.363.3" 1 0 0 0 "" 0 ""
+Count=5
 [Aliases]
 Count=0
 SuppressDialog=0

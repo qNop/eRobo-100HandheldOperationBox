@@ -414,6 +414,7 @@
           <state>$PROJ_DIR$\..\Drv\74HC573</state>
           <state>$PROJ_DIR$\..\Drv\DELAY</state>
           <state>$PROJ_DIR$\..\Drv\LCD12864</state>
+          <state>$PROJ_DIR$\..\FreeModbus\modbus</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -2063,12 +2064,6 @@
       <name>$PROJ_DIR$\..\FreeModbus\modbus\rtu\mbcrc.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\FreeModbus\modbus\functions\mbfunccoils_m.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\FreeModbus\modbus\functions\mbfuncdisc_m.c</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\FreeModbus\modbus\functions\mbfuncholding_m.c</name>
     </file>
     <file>
@@ -2084,7 +2079,7 @@
       <name>$PROJ_DIR$\..\FreeModbus\port\port.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\FreeModbus\port\portevent_m.c</name>
+      <name>$PROJ_DIR$\..\FreeModbus\port\src\portevent_m.c</name>
     </file>
   </group>
   <group>

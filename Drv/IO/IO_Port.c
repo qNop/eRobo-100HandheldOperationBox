@@ -42,12 +42,9 @@ void INIT_IO(void)
     CONFIG_PORT_IN(DDR_KEY_6,KEY_6);
     /*KEY_7∂Àø⁄≈‰÷√ ‰»Î◊¥Ã¨*/ 
     CONFIG_PORT_IN(DDR_KEY_7,KEY_7);
-    
-
    /*UART TXD*/
     CONFIG_PORT_OUT(DDR_TXD,TXD);
    /*UART RXD*/
-    CONFIG_PORT_IN(DDR_RXD,RXD);
-    
-
+    CONFIG_PORT_IN(DDR_RXD,RXD);  
+    SETPIN(PORT_RXD,RXD);
 }

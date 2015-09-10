@@ -6,6 +6,7 @@
 
 /* ----------------------- Modbus includes ----------------------------------*/
 #include "mb.h"
+#include "mb_m.h"
 #include "mbrtu.h"
 #include "mbport.h"
 
@@ -16,7 +17,7 @@
 #define USART_TX_DISABLE()  CLRPIN(UCSRB, UDRIE0)
 
 /* ----------------------- Start implementation -----------------------------*/
-void vMBPortSerialEnable( BOOL xRxEnable, BOOL xTxEnable )
+void vMBMasterPortSerialEnable( BOOL xRxEnable, BOOL xTxEnable )
 {
     ENTER_CRITICAL_SECTION();
     if( xRxEnable ){
@@ -34,27 +35,26 @@ void vMBPortSerialEnable( BOOL xRxEnable, BOOL xTxEnable )
     EXIT_CRITICAL_SECTION();
 }
 
-BOOL xMBPortSerialInit( UCHAR ucPort, ULONG ulBaudRate, UCHAR ucDataBits, eMBParity eParity )
+BOOL xMBMasterPortSerialInit( UCHAR ucPort, ULONG ulBaudRate, UCHAR ucDataBits, eMBParity eParity )
 {
     BOOL  bInitialized = TRUE;
-    UCSRA |=(1<<U2X0);
+  //  UCSRA |=(1<<U2X0);
     UCSRB=0x00;
     UCSRC |= (1<<UCSZ01)|(1<<UCSZ00); //8位数据位+1位停止位
-    //UBRRH= (CPU_CLK/MODBUS_BAUDRATE/16-1)/256;
-    UBRR= 16;
+    UBRR= (CPU_CLK/MODBUS_BAUDRATE/16-1);
     UCSRB |= (1<<RXEN0)|(1<<TXEN0);  //允许发送和接收
     
     return bInitialized;
 }
 //发送
-BOOL xMBPortSerialPutByte( CHAR ucByte )
+BOOL xMBMasterPortSerialPutByte( CHAR ucByte )
 {
-   while ( !( UCSRA & (1<<UDRE0)) )
+   while (!( UCSRA & (1<<UDRE0)));
     UART_DR = ucByte;
    return TRUE;
 }
 //接收
-BOOL xMBPortSerialGetByte( CHAR * pucByte )
+BOOL xMBMasterPortSerialGetByte( CHAR * pucByte )
 {
   *pucByte = (CHAR)(UART_DR);
   return TRUE;
@@ -65,15 +65,15 @@ BOOL xMBPortSerialGetByte( CHAR * pucByte )
 
 __interrupt void RXC_isr( void )
 {
-   xMBRTUReceiveFSM(); 
+    pxMBMasterFrameCBByteReceived();
 }  
 
 
 //发送中断子程序  
 __interrupt void TX_isr( void )
 {
-   xMBRTUTransmitFSM();
   
+    pxMBMasterFrameCBTransmitterEmpty();
 } 
 
 void EnterCriticalSection( void )

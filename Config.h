@@ -64,6 +64,8 @@ UART用作通信
 
 #define ENABLE_BIT_DEFINITIONS
 
+#define DEBUG
+
 #include "iopwm316.h"
 
 typedef union{
@@ -151,18 +153,11 @@ typedef struct
 #define MODBUS_ADDR                         0x01
 
 /*波特率的选择 16M晶振 U2X=0 的情况下满足 MODBUS 误差率小于2% 推荐选用 4800 9600 19200 38400 76800*/
-#define MODBUS_BAUDRATE                     115200
+#define MODBUS_BAUDRATE                     19200
 
 #define MB_TIMER_PRESCALER                (1024)   //分频
 
 #define MB_TIMER_FREQUENCY                (16)        //系统时钟16M
-#if  MODBUS_BAUDRATE>=19200
-#define usTim1Timerout50us           35
-#else       
-#define usTim1Timerout50us          7*110000/MODBUS_BAUDRATE//((7*220000) / (2*MODBUS_BAUDRATE))
-#endif
-#define usTimerOCRADelta      (255-(unsigned char)(usTim1Timerout50us*MB_TIMER_FREQUENCY*50/MB_TIMER_PRESCALER))
-
 
 /*焊接状态*/
 #define  WELD_STATUS_IDLE                       0 //空闲态

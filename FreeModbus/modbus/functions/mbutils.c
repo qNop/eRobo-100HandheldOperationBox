@@ -40,9 +40,13 @@
 #include "mbproto.h"
 
 /* ----------------------- Defines ------------------------------------------*/
+
 #define BITS_UCHAR      8U
 
 /* ----------------------- Start implementation -----------------------------*/
+#if MB_FUNC_READ_COILS_ENABLED > 0 || MB_FUNC_WRITE_COIL_ENABLED >0 ||\
+    MB_FUNC_WRITE_MULTIPLE_COILS_ENABLED > 0 || MB_FUNC_READ_DISCRETE_INPUTS_ENABLED >0
+       
 void
 xMBUtilSetBits( UCHAR * ucByteBuf, USHORT usBitOffset, UCHAR ucNBits,
                 UCHAR ucValue )
@@ -112,7 +116,7 @@ xMBUtilGetBits( UCHAR * ucByteBuf, USHORT usBitOffset, UCHAR ucNBits )
 
     return ( UCHAR ) usWordBuf;
 }
-
+#endif
 eMBException
 prveMBError2Exception( eMBErrorCode eErrorCode )
 {

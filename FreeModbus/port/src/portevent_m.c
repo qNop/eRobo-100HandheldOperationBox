@@ -24,93 +24,46 @@
 #include "mb_m.h"
 #include "mbport.h"
 #include "port.h"
+#include "mbconfig.h"
+
 
 #if MB_MASTER_RTU_ENABLED > 0 || MB_MASTER_ASCII_ENABLED > 0
 /* ----------------------- Defines ------------------------------------------*/
 /* ----------------------- Variables ----------------------------------------*/
-static struct rt_semaphore xMasterRunRes;
-static struct rt_event     xMasterOsEvent;
+//static struct rt_semaphore xMasterRunRes;
+//static struct rt_event     xMasterOsEvent;
+static eMBMasterEventType eQueuedEvent;
+static BOOL     xEventInQueue;
+
 /* ----------------------- Start implementation -----------------------------*/
 BOOL
 xMBMasterPortEventInit( void )
 {
-    rt_event_init(&xMasterOsEvent,"master event",RT_IPC_FLAG_PRIO);
+    //rt_event_init(&xMasterOsEvent,"master event",RT_IPC_FLAG_PRIO);
+    xEventInQueue = FALSE;
     return TRUE;
 }
 
 BOOL
 xMBMasterPortEventPost( eMBMasterEventType eEvent )
 {
-    rt_event_send(&xMasterOsEvent, eEvent);
+    //rt_event_send(&xMasterOsEvent, eEvent);
+    xEventInQueue = TRUE;
+    eQueuedEvent = eEvent;
     return TRUE;
 }
 
 BOOL
 xMBMasterPortEventGet( eMBMasterEventType * eEvent )
 {
-    rt_uint32_t recvedEvent;
-    /* waiting forever OS event */
-    rt_event_recv(&xMasterOsEvent,
-            EV_MASTER_READY | EV_MASTER_FRAME_RECEIVED | EV_MASTER_EXECUTE |
-            EV_MASTER_FRAME_SENT | EV_MASTER_ERROR_PROCESS,
-            RT_EVENT_FLAG_OR | RT_EVENT_FLAG_CLEAR, RT_WAITING_FOREVER,
-            &recvedEvent);
-    /* the enum type couldn't convert to int type */
-    switch (recvedEvent)
-    {
-    case EV_MASTER_READY:
-        *eEvent = EV_MASTER_READY;
-        break;
-    case EV_MASTER_FRAME_RECEIVED:
-        *eEvent = EV_MASTER_FRAME_RECEIVED;
-        break;
-    case EV_MASTER_EXECUTE:
-        *eEvent = EV_MASTER_EXECUTE;
-        break;
-    case EV_MASTER_FRAME_SENT:
-        *eEvent = EV_MASTER_FRAME_SENT;
-        break;
-    case EV_MASTER_ERROR_PROCESS:
-        *eEvent = EV_MASTER_ERROR_PROCESS;
-        break;
+    BOOL xEventHappened = FALSE;
+    if( xEventInQueue ){
+        *eEvent = eQueuedEvent;
+        xEventInQueue = FALSE;
+        xEventHappened = TRUE;
     }
-    return TRUE;
+    return xEventHappened;
 }
-/**
- * This function is initialize the OS resource for modbus master.
- * Note:The resource is define by OS.If you not use OS this function can be empty.
- *
- */
-void vMBMasterOsResInit( void )
-{
-    rt_sem_init(&xMasterRunRes, "master res", 0x01 , RT_IPC_FLAG_PRIO);
-}
-
-/**
- * This function is take Mobus Master running resource.
- * Note:The resource is define by Operating System.If you not use OS this function can be just return TRUE.
- *
- * @param lTimeOut the waiting time.
- *
- * @return resource taked result
- */
-BOOL xMBMasterRunResTake( LONG lTimeOut )
-{
-    /*If waiting time is -1 .It will wait forever */
-    return rt_sem_take(&xMasterRunRes, lTimeOut) ? FALSE : TRUE ;
-}
-
-/**
- * This function is release Mobus Master running resource.
- * Note:The resource is define by Operating System.If you not use OS this function can be empty.
- *
- */
-void vMBMasterRunResRelease( void )
-{
-    /* release resource */
-    rt_sem_release(&xMasterRunRes);
-}
-
 /**
  * This is modbus master respond timeout error process callback function.
  * @note There functions will block modbus master poll while execute OS waiting.
@@ -127,7 +80,7 @@ void vMBMasterErrorCBRespondTimeout(UCHAR ucDestAddress, const UCHAR* pucPDUData
      * @note This code is use OS's event mechanism for modbus master protocol stack.
      * If you don't use OS, you can change it.
      */
-    rt_event_send(&xMasterOsEvent, EV_MASTER_ERROR_RESPOND_TIMEOUT);
+    //rt_event_send(&xMasterOsEvent, EV_MASTER_ERROR_RESPOND_TIMEOUT);
 
     /* You can add your code under here. */
 
@@ -149,7 +102,7 @@ void vMBMasterErrorCBReceiveData(UCHAR ucDestAddress, const UCHAR* pucPDUData,
      * @note This code is use OS's event mechanism for modbus master protocol stack.
      * If you don't use OS, you can change it.
      */
-    rt_event_send(&xMasterOsEvent, EV_MASTER_ERROR_RECEIVE_DATA);
+ //   rt_event_send(&xMasterOsEvent, EV_MASTER_ERROR_RECEIVE_DATA);
 
     /* You can add your code under here. */
 
@@ -171,7 +124,7 @@ void vMBMasterErrorCBExecuteFunction(UCHAR ucDestAddress, const UCHAR* pucPDUDat
      * @note This code is use OS's event mechanism for modbus master protocol stack.
      * If you don't use OS, you can change it.
      */
-    rt_event_send(&xMasterOsEvent, EV_MASTER_ERROR_EXECUTE_FUNCTION);
+ //   rt_event_send(&xMasterOsEvent, EV_MASTER_ERROR_EXECUTE_FUNCTION);
 
     /* You can add your code under here. */
 
@@ -188,7 +141,7 @@ void vMBMasterCBRequestScuuess( void ) {
      * @note This code is use OS's event mechanism for modbus master protocol stack.
      * If you don't use OS, you can change it.
      */
-    rt_event_send(&xMasterOsEvent, EV_MASTER_PROCESS_SUCESS);
+  //  rt_event_send(&xMasterOsEvent, EV_MASTER_PROCESS_SUCESS);
 
     /* You can add your code under here. */
 
@@ -205,14 +158,14 @@ void vMBMasterCBRequestScuuess( void ) {
  */
 eMBMasterReqErrCode eMBMasterWaitRequestFinish( void ) {
     eMBMasterReqErrCode    eErrStatus = MB_MRE_NO_ERR;
-    rt_uint32_t recvedEvent;
+    unsigned int recvedEvent;
     /* waiting for OS event */
-    rt_event_recv(&xMasterOsEvent,
+   /* rt_event_recv(&xMasterOsEvent,
             EV_MASTER_PROCESS_SUCESS | EV_MASTER_ERROR_RESPOND_TIMEOUT
                     | EV_MASTER_ERROR_RECEIVE_DATA
                     | EV_MASTER_ERROR_EXECUTE_FUNCTION,
             RT_EVENT_FLAG_OR | RT_EVENT_FLAG_CLEAR, RT_WAITING_FOREVER,
-            &recvedEvent);
+            &recvedEvent);*/
     switch (recvedEvent)
     {
     case EV_MASTER_PROCESS_SUCESS:
