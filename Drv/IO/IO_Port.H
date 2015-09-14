@@ -45,6 +45,22 @@
 
 #define  SET_LCD_DB(data)             (PORT_LCD_DB = data) 
 
+/*LCD CS1*/
+#define  LCD_CS1                       3
+#define  PORT_LCD_CS1                  PORTC
+#define  DDR_LCD_CS1                   DDRC
+
+#define  SET_LCD_CS1()                 (PORT_LCD_CS1 |= (1<<(LCD_CS1)))  
+#define  CLEAR_LCD_CS1()               (PORT_LCD_CS1 &= ~(1<<(LCD_CS1)))
+
+/*LCD CS2*/
+#define  LCD_CS2                       2
+#define  PORT_LCD_CS2                  PORTC
+#define  DDR_LCD_CS2                   DDRC
+
+#define  SET_LCD_CS2()                 (PORT_LCD_CS2 |= (1<<(LCD_CS2)))  
+#define  CLEAR_LCD_CS2()               (PORT_LCD_CS2 &= ~(1<<(LCD_CS2)))
+
 /*UART TXD*/
 #define  TXD                          3
 #define  PORT_TXD                     PORTD

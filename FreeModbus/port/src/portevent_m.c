@@ -34,6 +34,7 @@
 //static struct rt_event     xMasterOsEvent;
 static eMBMasterEventType eQueuedEvent;
 static BOOL     xEventInQueue;
+static eMBMasterErrorEventType eMBMasterError;
 
 /* ----------------------- Start implementation -----------------------------*/
 BOOL
@@ -81,7 +82,7 @@ void vMBMasterErrorCBRespondTimeout(UCHAR ucDestAddress, const UCHAR* pucPDUData
      * If you don't use OS, you can change it.
      */
     //rt_event_send(&xMasterOsEvent, EV_MASTER_ERROR_RESPOND_TIMEOUT);
-
+    eMBMasterError=EV_ERROR_RESPOND_TIMEOUT;
     /* You can add your code under here. */
 
 }
@@ -103,7 +104,7 @@ void vMBMasterErrorCBReceiveData(UCHAR ucDestAddress, const UCHAR* pucPDUData,
      * If you don't use OS, you can change it.
      */
  //   rt_event_send(&xMasterOsEvent, EV_MASTER_ERROR_RECEIVE_DATA);
-
+    eMBMasterError=EV_ERROR_RECEIVE_DATA;
     /* You can add your code under here. */
 
 }
@@ -125,7 +126,7 @@ void vMBMasterErrorCBExecuteFunction(UCHAR ucDestAddress, const UCHAR* pucPDUDat
      * If you don't use OS, you can change it.
      */
  //   rt_event_send(&xMasterOsEvent, EV_MASTER_ERROR_EXECUTE_FUNCTION);
-
+    eMBMasterError=EV_ERROR_EXECUTE_FUNCTION;
     /* You can add your code under here. */
 
 }
@@ -142,7 +143,7 @@ void vMBMasterCBRequestScuuess( void ) {
      * If you don't use OS, you can change it.
      */
   //  rt_event_send(&xMasterOsEvent, EV_MASTER_PROCESS_SUCESS);
-
+    
     /* You can add your code under here. */
 
 }
@@ -188,5 +189,12 @@ eMBMasterReqErrCode eMBMasterWaitRequestFinish( void ) {
     }
     return eErrStatus;
 }
+void eMBMasterGetError(eMBMasterErrorEventType *p){
+  *p=eMBMasterError;
+}
+void eMBMasterSetError(eMBMasterErrorEventType error){
+  eMBMasterError=EV_ERROR_NONE;
+}
+
 
 #endif

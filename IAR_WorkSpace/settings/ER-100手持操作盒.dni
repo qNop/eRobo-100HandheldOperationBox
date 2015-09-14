@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=-1805632673
+Checksum=-1372946089
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -33,12 +33,15 @@ Category=_ 0
 LoggingEnabled=_ 0
 LogFile=_ ""
 [Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\User_Modbus_API.c}.100.4" 1 0 0 0 "" 0 ""
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\User_Modbus_API.c}.46.4" 1 0 0 0 "" 0 ""
 Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\FreeModbus\modbus\mb_m.c}.295.13" 1 0 0 0 "" 0 ""
 Bp2=_ "STD_CODE" "{$PROJ_DIR$\..\FreeModbus\modbus\mb_m.c}.281.4" 1 0 0 0 "" 0 ""
-Bp3=_ "STD_CODE" "{$PROJ_DIR$\..\FreeModbus\modbus\mb_m.c}.348.4" 1 0 0 0 "" 0 ""
-Bp4=_ "STD_CODE" "{$PROJ_DIR$\..\FreeModbus\modbus\rtu\mbrtu_m.c}.363.3" 1 0 0 0 "" 0 ""
-Count=5
+Bp3=_ "STD_CODE" "{$PROJ_DIR$\..\FreeModbus\modbus\rtu\mbrtu_m.c}.363.3" 1 0 0 0 "" 0 ""
+Bp4=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.89.5" 1 0 0 0 "" 0 ""
+Bp5=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.141.5" 1 0 0 0 "" 0 ""
+Bp6=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.45.3" 1 0 0 0 "" 0 ""
+Bp7=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.152.3" 1 0 0 0 "" 0 ""
+Count=8
 [Aliases]
 Count=0
 SuppressDialog=0

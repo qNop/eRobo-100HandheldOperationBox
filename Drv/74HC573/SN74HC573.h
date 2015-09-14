@@ -14,6 +14,6 @@
 
 unsigned char Sn_Get_Data();
 void Sn_Output_KeyCode(unsigned char KeyCode);
-void Sn_Output_CS(unsigned char bit);
+//void Sn_Output_CS(unsigned char bit);
 
 #endif

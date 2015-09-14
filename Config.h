@@ -64,7 +64,7 @@ UART用作通信
 
 #define ENABLE_BIT_DEFINITIONS
 
-#define DEBUG
+//#define DEBUG
 
 #include "iopwm316.h"
 
@@ -101,6 +101,10 @@ typedef struct{
   unsigned long Cont;
   unsigned long Release;
 }Type_Key;
+typedef union{
+  unsigned long Key_Long;
+  unsigned int Key_Buf[2];
+}Type_Key_union;
 
 #define KEY_SET                    0X001
 #define KEY_ADD                    0X002
@@ -153,7 +157,7 @@ typedef struct
 #define MODBUS_ADDR                         0x01
 
 /*波特率的选择 16M晶振 U2X=0 的情况下满足 MODBUS 误差率小于2% 推荐选用 4800 9600 19200 38400 76800*/
-#define MODBUS_BAUDRATE                     19200
+#define MODBUS_BAUDRATE                     38400
 
 #define MB_TIMER_PRESCALER                (1024)   //分频
 

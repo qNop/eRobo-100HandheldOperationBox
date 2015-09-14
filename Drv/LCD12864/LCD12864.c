@@ -22,8 +22,8 @@
 #define  SET_E()          SETPIN(PORT_LCD_E,LCD_E)
 #define  CLR_E()          CLRPIN(PORT_LCD_E,LCD_E)
    
-#define  LCD_LEFT()       Sn_Output_CS(1)
-#define  LCD_RIGHT()      Sn_Output_CS(0)
+#define  LCD_LEFT()       SET_LCD_CS2(),CLEAR_LCD_CS1()
+#define  LCD_RIGHT()      SET_LCD_CS1(),CLEAR_LCD_CS2()
 
 
 //*******************************************************************
@@ -152,11 +152,11 @@ unsigned char Lcd_GetBusy()
     /*»ñÈ¡¶Ë¿Ú×´Ì¬*/
     while(0x80 & LCD_DB_PIN){
       Res++;
-      if(Res>250){
+      if(Res>100){
         break;
       }
     }
-    if(Res>249){
+    if(Res>100){
       Res=1;
     }
     else
