@@ -79,6 +79,7 @@ __interrupt void TX_isr( void )
 void EnterCriticalSection( void )
 {
   CLRPIN(SREG, 7); //¹Ø×ÜÖÐ¶Ï
+  
 }
 
 void ExitCriticalSection( void )

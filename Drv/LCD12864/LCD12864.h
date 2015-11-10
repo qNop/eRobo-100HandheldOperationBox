@@ -15,8 +15,8 @@
 #define LCD_DISPLAY_ON            0X3F
 #define LCD_DISPLAY_OFF           0X3E
 
-#define LCD_SETPAGE(X)          (( 0X07 & X )| 0XB8 )
-#define LCD_SETADDRESS(Y)       (( 0X3F & Y )| 0X40 )
+#define LCD_SETPAGE(X)          ( 0XB8 | X )
+#define LCD_SETADDRESS(Y)       ( 0X40 | Y )
 #define LCD_DISPLAYSTARTLINE(Z) ( 0XC0 | Z )
 
 #define LCD_LEFT_MAX             0X40
@@ -24,17 +24,25 @@
     
 #define LCD_DB_PIN               PINB
 #define LCD_DDR                  DDRB
+    
+#define  LCD_LEFT()       SET_LCD_CS2(),CLEAR_LCD_CS1()
+#define  LCD_RIGHT()      SET_LCD_CS1(),CLEAR_LCD_CS2()
 
 #define LCD_GETSTATUS_BUSY(STATUS)      ((STATUS & 0X80) ? 1 : 0)
 #define LCD_GETSTATUS_ONOFF(STATUS)     ((STATUS & 0X20) ? 0 : 1)
 #define LCD_GETSTATUS_REST(STATUS)      ((STATUS & 0X10) ? 1 : 0)
 
-Sys_Error LCD_Init(void);
-Sys_Error Clr_LCD(void);
-Sys_Error Set_Cursor(unsigned char x,unsigned char y);
-Sys_Error Write_Data(unsigned char Data);
-Sys_Error Write_Cmd(unsigned char Cmd);
-
-Sys_Error Display_Char(unsigned char x,unsigned char y,unsigned char Char);
-Sys_Error Display_String(unsigned char x,unsigned char y,unsigned char *pString);
+void LCD_Init(void);
+//清屏时间为23ms
+void Clr_LCD(void);
+void Set_Cursor(unsigned char x,unsigned char y);
+void Write_Data(unsigned char Data);
+void Write_Cmd(unsigned char Cmd);
+#ifdef USE_ASCII
+void Display_Char(unsigned char x,unsigned char y,unsigned char Char);
+void Display_String(unsigned char x,unsigned char y,unsigned char *pString);
+#endif
+void Display_Logo(unsigned char y);
+void Display_Chinese(unsigned char *x,unsigned char y,\
+                     unsigned char __flash *Ch,unsigned char width);
 #endif 

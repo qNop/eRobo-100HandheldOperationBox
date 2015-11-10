@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=-1372946089
+Checksum=-1142555696
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -25,6 +25,18 @@ Exclusions=
 [Trace1]
 Enabled=0
 ShowSource=1
+[struct_types]
+Fmt0=Type_Key-Cont	1	0
+Fmt1=Type_Key-Release	1	0
+Fmt2=Type_Key-Trg	1	0
+[watch_formats]
+Fmt0={W}0:Menu_Abs_Count	3	0
+Fmt1={W}0:temp	1	0
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\Drv\TIME\porttimer.c}.82.7" 1 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.76.7" 1 0 0 0 "" 0 ""
+Bp2=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.46.5" 1 0 0 0 "" 0 ""
+Count=3
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -32,16 +44,6 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
-[Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\User_Modbus_API.c}.46.4" 1 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\FreeModbus\modbus\mb_m.c}.295.13" 1 0 0 0 "" 0 ""
-Bp2=_ "STD_CODE" "{$PROJ_DIR$\..\FreeModbus\modbus\mb_m.c}.281.4" 1 0 0 0 "" 0 ""
-Bp3=_ "STD_CODE" "{$PROJ_DIR$\..\FreeModbus\modbus\rtu\mbrtu_m.c}.363.3" 1 0 0 0 "" 0 ""
-Bp4=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.89.5" 1 0 0 0 "" 0 ""
-Bp5=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.141.5" 1 0 0 0 "" 0 ""
-Bp6=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.45.3" 1 0 0 0 "" 0 ""
-Bp7=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.152.3" 1 0 0 0 "" 0 ""
-Count=8
 [Aliases]
 Count=0
 SuppressDialog=0

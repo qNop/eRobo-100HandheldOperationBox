@@ -7,86 +7,45 @@
 
 //modbus
 #include "mb_m.h"
-
+#include "mbport.h"
 //sys配置
 
 #include "io_port.h"
 #include "LCD12864.h"
 #include "config.h"
-#include "Sn74hc573.h"
-#include "delay.h"
 
-static Type_Key  Key;
-eMBMasterEventType    eEvent;
+#include "delay.h"
+#include "menu.h"
+
+eMBMasterErrorEventType MB_Error;
+static  Type_Key  Key;
+unsigned int Modbus_Reg[17];
+unsigned int *pModbus_Reg;
+unsigned char Time_Enable=0;
+unsigned char Time_Count=0;
+
 /**********************************全局变量*******************************************/
 
 /********************************程序*************************************************/
 //空闲任务钩子函数
 void vApplicationIdleHook(void)
 { 
-  eMBMasterPoll(); //调用 MOdbusPOLL
    //喂狗
+  Menu_Select(pModbus_Reg);
 }
 
 /***********************************任务**********************************************/
-void UART_Task(void *pvParameters)
+void Modbus_Task(void *pvParameters)
 {
-  portTickType xLastWakeTime;
+static  portTickType Display_xLastWakeTime;
+  
+  Display_xLastWakeTime = xTaskGetTickCount();
  
-  // Initialise the xLastWakeTime variable with the current time.
-  xLastWakeTime = xTaskGetTickCount ();
-  Display_String(0,0,"SET:0<:0>:0Can:0");
-  Display_String(0,1,"      ^:0    ]:0");
-  Display_String(0,2," [:0<:0 >:0]:_ ");
-  Display_String(0,3,"      ^:0    ]:0");
-  Display_String(0,4,"FEED:0I+:0I-:0");
-  Display_String(0,5,"STAR:0SS:0STOP:0");
-  Display_String(0,6,"SEND:");
-  Display_String(0,7,"RECV:"); 
   for(;;)
   {     
-   
-             //按键触发
-        if(Key.Trg&KEY_SET)         Display_Char(32,0,'1');
-        if(Key.Trg&KEY_ADD)         Display_Char(56,0,'1');
-        if(Key.Trg&KEY_DEC)         Display_Char(80,0,'1');
-        if(Key.Trg&KEY_CANCEL)      Display_Char(120,0,'1');
-        if(Key.Trg&KEY_FEED)        Display_Char(40,4,'1');
-        if(Key.Trg&KEY_CURRENT_ADD) Display_Char(72,4,'1');
-        if(Key.Trg&KEY_CURRENT_DEC) Display_Char(104,4,'1');
-        if(Key.Trg&KEY_START)       Display_Char(40,5,'1');
-        if(Key.Trg&KEY_RESET)       Display_Char(72,5,'1');
-        if(Key.Trg&KEY_STOP)        Display_Char(120,5,'1');
-        if(Key.Trg&KEY_UP)          Display_Char(120,1,'1');
-        if(Key.Trg&KEY_DOWN)        Display_Char(120,3,'1');
-        if(Key.Trg&KEY_FORWARD)     Display_Char(64,1,'1');
-        if(Key.Trg&KEY_BACK)        Display_Char(64,3,'1');
-        if(Key.Trg&KEY_LEFT)        Display_Char(48,2,'1');
-        if(Key.Trg&KEY_RIGHT)       Display_Char(80,2,'1');
-        if(Key.Trg&KEY_TRAVELLEFT)  Display_Char(24,2,'1');
-        if(Key.Trg&KEY_TRAVELRIGHT) Display_Char(104,2,'1');
-        //按键释放
-        if(Key.Release&KEY_SET)         Display_Char(32,0,'0');
-        if(Key.Release&KEY_ADD)         Display_Char(56,0,'0');
-        if(Key.Release&KEY_DEC)         Display_Char(80,0,'0');
-        if(Key.Release&KEY_CANCEL)      Display_Char(120,0,'0');
-        if(Key.Release&KEY_FEED)        Display_Char(40,4,'0');
-        if(Key.Release&KEY_CURRENT_ADD) Display_Char(72,4,'0');
-        if(Key.Release&KEY_CURRENT_DEC) Display_Char(104,4,'0');
-        if(Key.Release&KEY_START)       Display_Char(40,5,'0');
-        if(Key.Release&KEY_RESET)       Display_Char(72,5,'0');
-        if(Key.Release&KEY_STOP)        Display_Char(120,5,'0');
-        if(Key.Release&KEY_UP)          Display_Char(120,1,'0');
-        if(Key.Release&KEY_DOWN)        Display_Char(120,3,'0');
-        if(Key.Release&KEY_FORWARD)     Display_Char(64,1,'0');
-        if(Key.Release&KEY_BACK)        Display_Char(64,3,'0');
-        if(Key.Release&KEY_LEFT)        Display_Char(48,2,'0');
-        if(Key.Release&KEY_RIGHT)       Display_Char(80,2,'0');
-        if(Key.Release&KEY_TRAVELLEFT)  Display_Char(24,2,'0');
-        if(Key.Release&KEY_TRAVELRIGHT) Display_Char(104,2,'0');
-         
-
-    vTaskDelayUntil(&xLastWakeTime,20); 
+    eMBMasterPoll(); //调用 MOdbusPOLL
+    //显示任务周期为200ms
+    vTaskDelayUntil(&Display_xLastWakeTime,3); 
   }
 }
 
@@ -94,53 +53,44 @@ void UART_Task(void *pvParameters)
 void Control_task(void *pvParameters)
 {
   Key_Union Key_Code;
-  Type_Key_union Key_Send;
-  portTickType xLastWakeTime;
-  xLastWakeTime = xTaskGetTickCount ();
-  
+  eMBMasterEventType    eEvent;
+  portTickType Control_xLastWakeTime;
+  Control_xLastWakeTime = xTaskGetTickCount();
+  pModbus_Reg=&Modbus_Reg[0];//获取mobus寄存器指针
   for(;;)
-  {    
-    unsigned char i=0;  
-    //按键扫描
-    Key_Code.Key_Index=0;
-    Sn_Output_KeyCode(0x0e);
-    switch(PINC&0xf0){
-      case 0xe0:Key_Code.Key_Struct.Set=1;break;//set键按下
-      case 0xd0:Key_Code.Key_Struct.Forward=1;break;
-      case 0xb0:Key_Code.Key_Struct.Right=1;break;
-      case 0x70:Key_Code.Key_Struct.Feed=1;break;
-    }
-    Sn_Output_KeyCode(0x0d);
-    switch(PINC&0xf0){
-      case 0xe0:Key_Code.Key_Struct.Add=1;break;
-      case 0xd0:Key_Code.Key_Struct.Up=1;break;
-      case 0xb0:Key_Code.Key_Struct.Travel_Right=1;break;
-      case 0x70:Key_Code.Key_Struct.Current_Add=1;break;
-    }
-    Sn_Output_KeyCode(0x0b);
-    switch(PINC&0xf0){
-      case 0xe0:Key_Code.Key_Struct.Dec=1;break;
-      case 0xd0:Key_Code.Key_Struct.Travel_Left=1;break;
-      case 0xb0:Key_Code.Key_Struct.Back=1;break;
-      case 0x70:Key_Code.Key_Struct.Currene_Dec=1;break;
-    }
-    Sn_Output_KeyCode(0x07);
-    switch(PINC&0xf0){
-      case 0xe0:Key_Code.Key_Struct.Cancel=1;break;
-      case 0xd0:Key_Code.Key_Struct.Left=1;break;
-      case 0xb0:Key_Code.Key_Struct.Down=1;break;
-    }
-    Sn_Output_KeyCode(0xff);
-    if(GET_START_PIN())Key_Code.Key_Struct.Start=1;
-    if(GET_RESET_PIN())Key_Code.Key_Struct.Reset=1;
-    if(GET_STOP_PIN())Key_Code.Key_Struct.Stop=1;
+  { 
+    //光标闪烁计时器
+    if(Time_Enable)
+      Time_Count++;
+    //获取按键值  
+    Key_Code=Get_Key();
+    //按键值处理
     Key.Trg=Key_Code.Key_Index&(Key_Code.Key_Index^Key.Cont);
     Key.Release=(Key_Code.Key_Index^Key.Trg^Key.Cont);
     Key.Cont=Key_Code.Key_Index;
-    Key_Send.Key_Long=Key.Trg;
-    eMBMasterReqWriteMultipleHoldingRegister(0x01,0,2,&Key_Send.Key_Buf[0],10);
-    eEvent=EV_MASTER_FRAME_SENT;
-    vTaskDelayUntil(&xLastWakeTime,30);  
+    //MODBUS发送器状态
+    xMBMasterPortEventGet( &eEvent );
+    //如果发送处于预备状态则进入发送状态
+    if(eEvent == EV_MASTER_READY){
+      //按键触发 发送触发值
+      *pModbus_Reg=Key_Code.Key_Index;//存储按键高位
+      Key_Code.Key_Index>>=8;
+      *(pModbus_Reg+1)=Key_Code.Key_Index;//存储按键低位
+      if(Key.Trg){
+        eMBMasterReqWriteMultipleHoldingRegister(MODBUS_ADDR,MB_KEY_RES,2,\
+          pModbus_Reg,10);
+      }
+      else if(Key.Release){//按键释放发送按键释放值
+        eMBMasterReqWriteMultipleHoldingRegister(MODBUS_ADDR,MB_KEY_RES,2,\
+          pModbus_Reg,10);
+      }
+      else{//无按键按下则发送寄存器查询代码
+        
+        eMBMasterReqReadHoldingRegister(MODBUS_ADDR,MB_CURRENT_PAGE,15,10);
+      }
+    }
+    //该任务周期为40ms
+    vTaskDelayUntil(&Control_xLastWakeTime,30);  
   }   
 }
 /***********************************主函数*******************************************/
@@ -150,13 +100,20 @@ int main(void)
   INIT_IO(); 
   //初始化LCD
   LCD_Init();
-  // 初始化Modbus
+  //显示公司logo
+  Display_Logo(2);
+  //清除显示屏
+  Clr_LCD();
+  //初始化Modbus
   eMBMasterInit(MB_RTU,0,MODBUS_BAUDRATE,MB_PAR_NONE);
+  //使能Modbus
   eMBMasterEnable();
+  //发送主机处于待机状态
+  xMBMasterPortEventPost(EV_MASTER_READY);
   //创建任务 
-  xTaskCreate(Control_task,"Control",configMINIMAL_STACK_SIZE,NULL,1,NULL);
+  xTaskCreate(Control_task,"Control",configMINIMAL_STACK_SIZE,NULL,2,NULL);
   //创建任务
-  xTaskCreate(UART_Task,"UART",configMINIMAL_STACK_SIZE,NULL,2,NULL);
+  xTaskCreate(Modbus_Task,"Modbus",configMINIMAL_STACK_SIZE,NULL,1,NULL);
   //任务调度
   vTaskStartScheduler();
   //永远执行不到这里

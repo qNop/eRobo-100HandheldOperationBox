@@ -63,7 +63,7 @@ void vMBMasterPortTimersRespondTimeoutEnable()
     TCNT0=Timer_Reload;          //10ms定时
     SETPIN(TCCR0B, CS02);                  //开始计数
     SETPIN(TCCR0B, CS00);
-    TimeOver_Count=MB_MASTER_TIMEOUT_MS_RESPOND/10;
+    TimeOver_Count=0;
 }
 
 void vMBMasterPortTimersDisable()

@@ -58,7 +58,6 @@ typedef long    LONG;
 void   EnterCriticalSection( void );
 void   ExitCriticalSection( void );
 
-#define CPU_CLK            (16000000U)
 
         
 

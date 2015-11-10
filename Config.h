@@ -68,31 +68,101 @@ UART用作通信
 
 #include "iopwm316.h"
 
+
+#define  CPU_CLK         16000000
+
+typedef struct{
+  unsigned int Weld_Start_And_Stop:1;//焊接始终端
+  unsigned int Weld_First_Point:1;    //焊接第一点
+  unsigned int Swing_Mode:2;          //摆动方式
+  unsigned int Reservation_Action:1;  //预约有效
+  unsigned int Rst:11;
+}Mult_Res_Struct; 
+
+typedef union{
+  unsigned int Data;
+  Mult_Res_Struct Mult_Res;
+}Mult_Union;
+
+typedef struct{
+  unsigned int Header:4;   //显示不同页首
+  unsigned int Content:7;  //显示不同页内容
+  unsigned int Bottom:3;   //显示不同页底
+  unsigned int Mouse:2;    //为0 则清除游标 1则 显示在1位置 2则显示在2位置 3则显示在3位置
+}Page_Struct;
+typedef union{
+  unsigned int Page;
+  Page_Struct Page_Mult;
+}Page_Union;
+/*
+typedef struct{
+unsigned long Key;               //按键值4
+unsigned int Error;               //错误编号6
+Mul_Res_Struct Mult;              //8
+unsigned int Teach_Point_Num;     //示教点数10
+unsigned int Root_Gap;              //根部间隙12
+unsigned int Plate_Hight;           //板厚14
+unsigned int Weld_Length;           //焊接长 16
+Page_Struct Page;                   //18
+unsigned char Current_Weld_Num;           //当前焊缝号20
+unsigned char Set_Weld_Num;
+unsigned int Weld_Current;          //焊接电流22
+unsigned int Weld_Volagte;          //焊接电压24
+unsigned int Weld_Speed;            //焊接速度26
+unsigned int Swing_Frq;             //摆动频率28
+unsigned int Swing_Wide;            // 摆动幅度30
+unsigned int Stay_Time;             // 左停留时间32
+}Reg_Union;
+typedef union{
+unsigned int Reg_Buf[16];//34位通信数组
+Reg_Union Reg;
+}MB_HoldReg_Union;*/
+#define KEY_LOW_BUF             0
+#define KEY_HIGH_BUF            1
+#define ERROR_BUF               2
+#define MULT_BUF                3
+#define ROOT_GAP_BUF            4   //根部间隙12
+#define PLATE_HIGHT_BUF         5  //板厚14
+#define WELD_LENGTH_BUF         6   //焊接长 16
+#define TEACH_POINT_BUF         7
+#define PAGE_BUF                8
+#define WELD_NUM_BUF            9
+#define WELD_CURRENT_BUF       10   //焊接电流22 电流电压 都是准备好的 FFFF后三个F 代表十进制
+#define WELD_SPEED_BUF         11   //焊接速度26
+#define WELD_CURRENT_NUM_BUF   12
+#define WELD_VOLAGTE_BUF       13   //焊接电压24
+#define SWING_FRQ_BUF          14   //摆动频率28
+#define SWING_WIDE_BUF         15   // 摆动幅度30
+#define STAY_TIME_BUF          16   // 左停留时间32
+
+
 typedef union{
   unsigned long Key_Index;
   struct{
-    unsigned int Set:1;
-    unsigned int Add:1;
-    unsigned int Dec:1;
-    unsigned int Cancel:1;
-    unsigned int Feed:1;
-    unsigned int Current_Add:1;
-    unsigned int Currene_Dec:1;
-    unsigned int Start:1;
+    unsigned long Set:1;
+    unsigned long Add:1;
+    unsigned long Dec:1;
+    unsigned long Cancel:1;
     
-    unsigned int Reset:1;
-    unsigned int Stop:1;  
+    unsigned long Travel_Left:1;
+    unsigned long Travel_Right:1;
+    unsigned long Left:1;
+    unsigned long Right:1;
     
-    unsigned int Up:1;
-    unsigned int Down:1;
-    unsigned int Forward:1;
-    unsigned int Back:1;
-    unsigned int Left:1;
-    unsigned int Right:1;
-    unsigned int Travel_Left:1;
-    unsigned int Travel_Right:1;
+    unsigned long Forward:1;
+    unsigned long Back:1;
+    unsigned long Up:1;
+    unsigned long Down:1;
     
-    unsigned int Rest:14;
+    unsigned long Feed:1;
+    unsigned long Current_Add:1;
+    unsigned long Currene_Dec:1;
+    unsigned long Start:1;
+    
+    unsigned long Reset:1;
+    unsigned long Stop:1;  
+    
+    unsigned long Rest:14;
   }Key_Struct;
 }Key_Union;
 
@@ -101,41 +171,38 @@ typedef struct{
   unsigned long Cont;
   unsigned long Release;
 }Type_Key;
-typedef union{
-  unsigned long Key_Long;
-  unsigned int Key_Buf[2];
-}Type_Key_union;
 
-#define KEY_SET                    0X001
-#define KEY_ADD                    0X002
-#define KEY_DEC                    0X004
-#define KEY_CANCEL                 0X008
-#define KEY_FEED                   0X010
-#define KEY_CURRENT_ADD            0X020
-#define KEY_CURRENT_DEC            0X040
-#define KEY_START                  0X080
-#define KEY_RESET                  0X100
-#define KEY_STOP                   0X200
-#define KEY_UP                     0X400
-#define KEY_DOWN                   0X800
-#define KEY_FORWARD                0X01000
-#define KEY_BACK                   0X02000
-#define KEY_LEFT                   0X04000
-#define KEY_RIGHT                  0X08000
-#define KEY_TRAVELLEFT             0X010000
-#define KEY_TRAVELRIGHT            0X020000
+
+#define KEY_SET                    0X000001
+#define KEY_ADD                    0X000002
+#define KEY_DEC                    0X000004
+#define KEY_CANCEL                 0X000008
+#define KEY_TRAVELLEFT             0X000010
+#define KEY_TRAVELRIGHT            0X000020
+#define KEY_LEFT                   0X000040
+#define KEY_RIGHT                  0X000080
+#define KEY_UP                     0X000400
+#define KEY_DOWN                   0X000800
+#define KEY_FORWARD                0X000100
+#define KEY_BACK                   0X000200
+#define KEY_FEED                   0X001000
+#define KEY_CURRENT_ADD            0X002000
+#define KEY_CURRENT_DEC            0X004000
+#define KEY_START                  0X008000  
+#define KEY_RESET                  0X010000
+#define KEY_STOP                   0X020000
+
 /*系统错误类型*/
-typedef enum
+typedef struct
 {
-  Sys_No_Error,//无错误
-  Sys_Modbus_Error,
-  //应该有几种
-  
-  Sys_Weld_Error,
+  unsigned long Sys_Modbus_Error:1;//MODBUS错误
+  unsigned long Sys_Weld_Error:1;
   //也是应该有几种
-  Sys_Lcd_Busy,
+  unsigned long Sys_Lcd_Busy:1;
+  unsigned long Sys_Rst:28;
   
 }Sys_Error;
+
 /*PID定义*/
 /*
 typedef struct
@@ -162,6 +229,9 @@ typedef struct
 #define MB_TIMER_PRESCALER                (1024)   //分频
 
 #define MB_TIMER_FREQUENCY                (16)        //系统时钟16M
+
+#define MB_KEY_RES                              10
+#define MB_CURRENT_PAGE                         12
 
 /*焊接状态*/
 #define  WELD_STATUS_IDLE                       0 //空闲态

@@ -12,35 +12,35 @@
 #define  PORT_LE                     PORTC
 #define  DDR_LE                      DDRC
 
-#define  SET_LE()                   (PORT_LE |= (1<<(LE)))  
-#define  CLEAR_LE()                 (PORT_LE &= ~(1<<(LE)))
+#define  SET_LE()                   (PORT_LE |= 0X01)  
+#define  CLEAR_LE()                 (PORT_LE &= 0XFE)
 
 /*LCD_RW*/
 #define  LCD_RW                      1
 #define  PORT_LCD_RW                 PORTD
 #define  DDR_LCD_RW                  DDRD
 
-#define  SET_LCD_RW()                (PORT_LCD_RW |= (1<<(LCD_RW)))  
-#define  CLEAR_LCD_RW()              (PORT_LCD_RW &= ~(1<<(LCD_RW)))
+#define  SET_LCD_RW()                (PORT_LCD_RW |= 0X02)  
+#define  CLEAR_LCD_RW()              (PORT_LCD_RW &= 0XFD)
 
 /*LCD_RS*/
 #define  LCD_RS                       2
 #define  PORT_LCD_RS                  PORTD
 #define  DDR_LCD_RS                   DDRD
 
-#define  SET_LCD_RS()                (PORT_LCD_RS |= (1<<(LCD_RS)))  
-#define  CLEAR_LCD_RS()              (PORT_LCD_RS &= ~(1<<(LCD_RS)))
+#define  SET_LCD_RS()                (PORT_LCD_RS |= 0X04)  
+#define  CLEAR_LCD_RS()              (PORT_LCD_RS &= 0XFB)
 
 /*LCD_E*/
 #define  LCD_E                        1
 #define  PORT_LCD_E                   PORTC
 #define  DDR_LCD_E                    DDRC
 
-#define  SET_LCD_E()                 (PORT_LCD_E |= (1<<(LCD_E)))  
-#define  CLEAR_LCD_E()               (PORT_LCD_E &= ~(1<<(LCD_E)))
+#define  SET_LCD_E()                 (PORT_LCD_E |= 0X02)  
+#define  CLEAR_LCD_E()               (PORT_LCD_E &= 0XFD)
 
 /*LCD_DB*/
-#define  OUTPUT_LCD_DB(db)             ( PORTB = db )
+#define  OUTPUT_LCD_DB(db)           ( PORTB = db )
 #define  GET_LCD_DB()                 PORTB
 
 #define  SET_LCD_DB(data)             (PORT_LCD_DB = data) 
@@ -50,16 +50,16 @@
 #define  PORT_LCD_CS1                  PORTC
 #define  DDR_LCD_CS1                   DDRC
 
-#define  SET_LCD_CS1()                 (PORT_LCD_CS1 |= (1<<(LCD_CS1)))  
-#define  CLEAR_LCD_CS1()               (PORT_LCD_CS1 &= ~(1<<(LCD_CS1)))
+#define  SET_LCD_CS1()                 (PORT_LCD_CS1 |= 0X08)  
+#define  CLEAR_LCD_CS1()               (PORT_LCD_CS1 &= 0XF7)
 
 /*LCD CS2*/
 #define  LCD_CS2                       2
 #define  PORT_LCD_CS2                  PORTC
 #define  DDR_LCD_CS2                   DDRC
 
-#define  SET_LCD_CS2()                 (PORT_LCD_CS2 |= (1<<(LCD_CS2)))  
-#define  CLEAR_LCD_CS2()               (PORT_LCD_CS2 &= ~(1<<(LCD_CS2)))
+#define  SET_LCD_CS2()                 (PORT_LCD_CS2 |= 0X04)  
+#define  CLEAR_LCD_CS2()               (PORT_LCD_CS2 &= 0XFB)
 
 /*UART TXD*/
 #define  TXD                          3
