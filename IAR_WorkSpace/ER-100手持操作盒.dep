@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>2637478388</fileChecksum>
+  <fileChecksum>4188323444</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
@@ -99,7 +99,7 @@
       <file>$PROJ_DIR$\..\FreeModbus\modbus\include\mb.h</file>
       <file>$PROJ_DIR$\Debug\Obj\portevent_m.r90</file>
       <file>$PROJ_DIR$\Debug\Obj\mbcrc.pbi</file>
-      <file>$PROJ_DIR$\..\Drv\74HC573\Sn74hc573.h</file>
+      <file>$PROJ_DIR$\..\Drv\74HC573\SN74HC573.h</file>
       <file>$PROJ_DIR$\..\Drv\LCD12864\LCD12864.h</file>
       <file>$PROJ_DIR$\Debug\Obj\portevent_m.pbi</file>
       <file>$PROJ_DIR$\Debug\Obj\mb_m.pbi</file>

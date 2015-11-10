@@ -402,7 +402,6 @@ xMBMasterRTUTimerExpired(void)
 	if (eMasterCurTimerMode == MB_TMODE_CONVERT_DELAY) {
 		xNeedPoll = xMBMasterPortEventPost( EV_MASTER_EXECUTE );
 	}
-
 	return xNeedPoll;
 }
 

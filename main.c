@@ -85,7 +85,6 @@ void Control_task(void *pvParameters)
           pModbus_Reg,10);
       }
       else{//无按键按下则发送寄存器查询代码
-        
         eMBMasterReqReadHoldingRegister(MODBUS_ADDR,MB_CURRENT_PAGE,15,10);
       }
     }

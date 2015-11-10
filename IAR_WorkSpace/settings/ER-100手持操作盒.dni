@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=-1142555696
+Checksum=-335122725
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -26,17 +26,13 @@ Exclusions=
 Enabled=0
 ShowSource=1
 [struct_types]
-Fmt0=Type_Key-Cont	1	0
-Fmt1=Type_Key-Release	1	0
-Fmt2=Type_Key-Trg	1	0
+Fmt0=Page_Union-Page	4	0
+Fmt1=Type_Key-Cont	1	0
+Fmt2=Type_Key-Release	1	0
+Fmt3=Type_Key-Trg	1	0
 [watch_formats]
 Fmt0={W}0:Menu_Abs_Count	3	0
 Fmt1={W}0:temp	1	0
-[Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\Drv\TIME\porttimer.c}.82.7" 1 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.76.7" 1 0 0 0 "" 0 ""
-Bp2=_ "STD_CODE" "{$PROJ_DIR$\..\main.c}.46.5" 1 0 0 0 "" 0 ""
-Count=3
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -44,6 +40,10 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\Drv\TIME\porttimer.c}.82.7" 1 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\Menu.c}.594.3" 1 0 0 0 "" 0 ""
+Count=2
 [Aliases]
 Count=0
 SuppressDialog=0
