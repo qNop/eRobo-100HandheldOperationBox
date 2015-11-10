@@ -150,9 +150,11 @@
 #define  YI4         79
 #define  AN1         80
 
+//вт
+#define  ZI4         81
 //йж
-#define  SHOU3       81
-#define  ZI4         82
+#define  SHOU3       82
+
 //нч
 #define  WU2         83 
 #define  ZUO3        84

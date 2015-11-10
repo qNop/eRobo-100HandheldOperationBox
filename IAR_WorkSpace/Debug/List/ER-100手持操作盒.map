@@ -2,7 +2,7 @@
 #                                                                              #
 #      IAR Universal Linker V5.8.0.42                                          #
 #                                                                              #
-#           Link time     =  10/Nov/2015  14:55:16                             #
+#           Link time     =  10/Nov/2015  15:53:37                             #
 #           Target CPU    =  A90                                               #
 #           List file     =  E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐ #
 #                            òÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_ #
@@ -243,13 +243,13 @@ Module  Entry                                      Address
         _..X_FLASH_NEND                            CODE 00003FFF
         _..X_INTVEC_SIZE                           CODE 00000080
 heap_1 ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\heap_1.r90 )
-        pvPortMalloc                               CODE 00001018
-        vPortFree                                  CODE 00001080
+        pvPortMalloc                               CODE 00001022
+        vPortFree                                  CODE 0000108A
         __?EECR                                    DATA 0000001F
         __?EEDR                                    DATA 00000020
         __?EEARL                                   DATA 00000021
         __?EEARH                                   DATA 00000022
-        ?<Segment init: NEAR_Z>                    CODE 00003776
+        ?<Segment init: NEAR_Z>                    CODE 00003780
         xHeap                                      DATA 000001BD
         xNextFreeByte                              DATA 0000034D
 IO_Port ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\IO_Port.r90 )
@@ -259,7 +259,7 @@ IO_Port ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-
         _A_DDRC                                    DATA 00000027
         _A_PORTB                                   DATA 00000025
         _A_DDRB                                    DATA 00000024
-        INIT_IO                                    CODE 00001082
+        INIT_IO                                    CODE 0000108C
         PORTD                                      DATA 0000002B
         DDRD                                       DATA 0000002A
         PORTC                                      DATA 00000028
@@ -269,50 +269,50 @@ IO_Port ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-
 LCD12864 ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\LCD12864.r90 )
         _A_PINB                                    DATA 00000023
         Logo                                       CODE 00000080
-        Write_Cmd                                  CODE 000010D4
-        Write_Data                                 CODE 000010FA
-        Read_Data                                  CODE 0000111E
-        Set_Cursor                                 CODE 00001164
-        Clr_LCD                                    CODE 00001184
-        LCD_Init                                   CODE 000011BE
-        Display_Logo                               CODE 000011DA
-        Display_Chinese                            CODE 00001262
+        Write_Cmd                                  CODE 000010DE
+        Write_Data                                 CODE 00001104
+        Read_Data                                  CODE 00001128
+        Set_Cursor                                 CODE 0000116E
+        Clr_LCD                                    CODE 0000118E
+        LCD_Init                                   CODE 000011C8
+        Display_Logo                               CODE 000011E4
+        Display_Chinese                            CODE 0000126C
         PORTD                                      DATA 0000002B
         PORTC                                      DATA 00000028
         PORTB                                      DATA 00000025
         DDRB                                       DATA 00000024
         PINB                                       DATA 00000023
-        Lcd_GetBusy                                CODE 000010B2
+        Lcd_GetBusy                                CODE 000010BC
 list ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\list.r90 )
-        vListInitialise                            CODE 000014E2
-        vListInitialiseItem                        CODE 00001518
-        vListInsertEnd                             CODE 00001524
-        vListInsert                                CODE 0000156E
-        vListRemove                                CODE 000015DA
+        vListInitialise                            CODE 000014EC
+        vListInitialiseItem                        CODE 00001522
+        vListInsertEnd                             CODE 0000152E
+        vListInsert                                CODE 00001578
+        vListRemove                                CODE 000015E4
 main ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\main.r90 )
         Modbus_Reg                                 DATA 0000035B
         pModbus_Reg                                DATA 0000037D
         Time_Enable                                DATA 0000037F
         Time_Count                                 DATA 00000380
-        vApplicationIdleHook                       CODE 00001632
-        Modbus_Task                                CODE 00001640
-        Control_task                               CODE 0000165E
-        main                                       CODE 000017E0
-        ?<Segment init: NEAR_I>                    CODE 0000377C
+        vApplicationIdleHook                       CODE 0000163C
+        Modbus_Task                                CODE 0000164A
+        Control_task                               CODE 00001668
+        main                                       CODE 000017EA
+        ?<Segment init: NEAR_I>                    CODE 00003786
         Key                                        DATA 0000034F
         Modbus_Task::Display_xLastWakeTime         DATA 00000381
 mb_m ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\mb_m.r90 )
         pxMBMasterFrameCBByteReceived              DATA 00000390
         pxMBMasterFrameCBTransmitterEmpty          DATA 00000392
         pxMBMasterPortCBTimerExpired               DATA 00000394
-        eMBMasterInit                              CODE 00001876
-        eMBMasterEnable                            CODE 0000190A
-        eMBMasterPoll                              CODE 00001930
-        vMBMasterSetCBRunInMasterMode              CODE 00001B50
-        ucMBMasterGetDestAddress                   CODE 00001B56
-        vMBMasterSetDestAddress                    CODE 00001B5C
-        eMBMasterGetErrorType                      CODE 00001B62
-        vMBMasterSetErrorType                      CODE 00001B68
+        eMBMasterInit                              CODE 00001880
+        eMBMasterEnable                            CODE 00001914
+        eMBMasterPoll                              CODE 0000193A
+        vMBMasterSetCBRunInMasterMode              CODE 00001B5A
+        ucMBMasterGetDestAddress                   CODE 00001B60
+        vMBMasterSetDestAddress                    CODE 00001B66
+        eMBMasterGetErrorType                      CODE 00001B6C
+        vMBMasterSetErrorType                      CODE 00001B72
         ucMBMasterDestAddress                      DATA 00000383
         xMBRunInMasterMode                         DATA 00000384
         eMBMasterCurErrorType                      DATA 00000385
@@ -331,25 +331,25 @@ mb_m ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100
 mbcrc ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\mbcrc.r90 )
         aucCRCHi                                   CODE 00000280
         aucCRCLo                                   CODE 00000380
-        usMBCRC16                                  CODE 00001B6E
+        usMBCRC16                                  CODE 00001B78
 mbfuncholding_m ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\mbfuncholding_m.r90 )
-        eMBMasterReqWriteMultipleHoldingRegister   CODE 00001BBA
-        eMBMasterFuncWriteMultipleHoldingRegister  CODE 00001C9C
-        eMBMasterReqReadHoldingRegister            CODE 00001D2C
-        eMBMasterFuncReadHoldingRegister           CODE 00001D96
+        eMBMasterReqWriteMultipleHoldingRegister   CODE 00001BC4
+        eMBMasterFuncWriteMultipleHoldingRegister  CODE 00001CA6
+        eMBMasterReqReadHoldingRegister            CODE 00001D36
+        eMBMasterFuncReadHoldingRegister           CODE 00001DA0
 mbrtu_m ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\mbrtu_m.r90 )
-        eMBMasterRTUInit                           CODE 00001E2A
-        eMBMasterRTUStart                          CODE 00001E9E
-        eMBMasterRTUStop                           CODE 00001EBA
-        eMBMasterRTUReceive                        CODE 00001ED0
-        eMBMasterRTUSend                           CODE 00001F34
-        xMBMasterRTUReceiveFSM                     CODE 00001FF4
-        xMBMasterRTUTransmitFSM                    CODE 000020A4
-        xMBMasterRTUTimerExpired                   CODE 00002134
-        vMBMasterGetPDUSndBuf                      CODE 000021BA
-        vMBMasterSetPDUSndLength                   CODE 000021C6
-        usMBMasterGetPDUSndLength                  CODE 000021D0
-        xMBMasterRequestIsBroadcast                CODE 000021DA
+        eMBMasterRTUInit                           CODE 00001E34
+        eMBMasterRTUStart                          CODE 00001EA8
+        eMBMasterRTUStop                           CODE 00001EC4
+        eMBMasterRTUReceive                        CODE 00001EDA
+        eMBMasterRTUSend                           CODE 00001F3E
+        xMBMasterRTUReceiveFSM                     CODE 00001FFE
+        xMBMasterRTUTransmitFSM                    CODE 000020AE
+        xMBMasterRTUTimerExpired                   CODE 0000213E
+        vMBMasterGetPDUSndBuf                      CODE 000021C4
+        vMBMasterSetPDUSndLength                   CODE 000021D0
+        usMBMasterGetPDUSndLength                  CODE 000021DA
+        xMBMasterRequestIsBroadcast                CODE 000021E4
         eSndState                                  DATA 0000039D
         eRcvState                                  DATA 0000039E
         ucMasterRTUSndBuf                          DATA 0000039F
@@ -361,19 +361,19 @@ mbrtu_m ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-
         xFrameIsBroadcast                          DATA 000003DB
         eMasterCurTimerMode                        DATA 000003DC
 mbutils ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\mbutils.r90 )
-        prveMBError2Exception                      CODE 000021E0
+        prveMBError2Exception                      CODE 000021EA
 Menu ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\Menu.r90 )
         _A_PIND                                    DATA 00000029
         _A_PINC                                    DATA 00000026
-        Get_Key                                    CODE 000021FE
+        Get_Key                                    CODE 00002208
         Ch_lib                                     CODE 00000480
         Pic_lib                                    CODE 00000CF0
-        Display_Num                                CODE 000023BC
+        Display_Num                                CODE 000023C6
         Page_Header                                CODE 00000D80
         Page_Content                               CODE 00000DA4
         Page_Bottom                                CODE 00000F2A
-        Swing                                      CODE 00000F66
-        Menu_Select                                CODE 00002412
+        Swing                                      CODE 00000F70
+        Menu_Select                                CODE 0000241C
         PIND                                       DATA 00000029
         PINC                                       DATA 00000026
         Page_Old                                   DATA 000003DD
@@ -383,34 +383,34 @@ port ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100
         _A_TCCR1B                                  DATA 00000081
         _A_TIMSK1                                  DATA 0000006F
         uxCriticalNesting                          DATA 000001B5
-        pxPortInitialiseStack                      CODE 000027E4
-        xPortStartScheduler                        CODE 000028E2
-        SIG_OUTPUT_COMPARE1A                       CODE 00002920
-        vPortEnterCritical                         CODE 00002928
-        vPortExitCritical                          CODE 00002936
+        pxPortInitialiseStack                      CODE 000027EE
+        xPortStartScheduler                        CODE 000028EC
+        SIG_OUTPUT_COMPARE1A                       CODE 0000292A
+        vPortEnterCritical                         CODE 00002932
+        vPortExitCritical                          CODE 00002940
         OCR1A                                      DATA 00000088
         OCR1AH                                     DATA 00000089
         OCR1AL                                     DATA 00000088
         TCCR1B                                     DATA 00000081
         TIMSK1                                     DATA 0000006F
-        prvSetupTimerInterrupt                     CODE 000028EC
+        prvSetupTimerInterrupt                     CODE 000028F6
 portevent_m ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\portevent_m.r90 )
-        xMBMasterPortEventInit                     CODE 0000294C
-        xMBMasterPortEventPost                     CODE 00002956
-        xMBMasterPortEventGet                      CODE 00002968
-        vMBMasterErrorCBRespondTimeout             CODE 0000298C
-        vMBMasterErrorCBReceiveData                CODE 00002994
-        vMBMasterErrorCBExecuteFunction            CODE 0000299C
-        vMBMasterCBRequestScuuess                  CODE 000029A4
-        eMBMasterWaitRequestFinish                 CODE 000029A6
+        xMBMasterPortEventInit                     CODE 00002956
+        xMBMasterPortEventPost                     CODE 00002960
+        xMBMasterPortEventGet                      CODE 00002972
+        vMBMasterErrorCBRespondTimeout             CODE 00002996
+        vMBMasterErrorCBReceiveData                CODE 0000299E
+        vMBMasterErrorCBExecuteFunction            CODE 000029A6
+        vMBMasterCBRequestScuuess                  CODE 000029AE
+        eMBMasterWaitRequestFinish                 CODE 000029B0
         eQueuedEvent                               DATA 000003E1
         xEventInQueue                              DATA 000003E3
         eMBMasterError                             DATA 000003E4
 portmacro ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\portmacro.r90 )
-        vPortYield                                 CODE 000029CA
-        vPortYieldFromTick                         CODE 00002A86
-        vPortStart                                 CODE 00002B46
-        vNoISR                                     CODE 00002BA2
+        vPortYield                                 CODE 000029D4
+        vPortYieldFromTick                         CODE 00002A90
+        vPortStart                                 CODE 00002B50
+        vNoISR                                     CODE 00002BAC
 portserial ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\portserial.r90 )
         _A_UDR                                     DATA 000000C6
         _A_UBRR                                    DATA 000000C4
@@ -418,14 +418,14 @@ portserial ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRo
         _A_UCSRB                                   DATA 000000C1
         _A_UCSRA                                   DATA 000000C0
         _A_SREG                                    DATA 0000005F
-        vMBMasterPortSerialEnable                  CODE 00002BA4
-        xMBMasterPortSerialInit                    CODE 00002BEA
-        xMBMasterPortSerialPutByte                 CODE 00002C14
-        xMBMasterPortSerialGetByte                 CODE 00002C26
-        RXC_isr                                    CODE 00002C32
-        TX_isr                                     CODE 00002C7E
-        EnterCriticalSection                       CODE 00002CCA
-        ExitCriticalSection                        CODE 00002CCE
+        vMBMasterPortSerialEnable                  CODE 00002BAE
+        xMBMasterPortSerialInit                    CODE 00002BF4
+        xMBMasterPortSerialPutByte                 CODE 00002C1E
+        xMBMasterPortSerialGetByte                 CODE 00002C30
+        RXC_isr                                    CODE 00002C3C
+        TX_isr                                     CODE 00002C88
+        EnterCriticalSection                       CODE 00002CD4
+        ExitCriticalSection                        CODE 00002CD8
         UDR                                        DATA 000000C6
         UBRR                                       DATA 000000C4
         UBRRH                                      DATA 000000C5
@@ -439,13 +439,13 @@ porttimer ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRob
         _A_TCNT0                                   DATA 00000046
         _A_TCCR0B                                  DATA 00000045
         _A_TCCR0A                                  DATA 00000044
-        prvvTIMERExpiredISR                        CODE 00002CD2
-        xMBMasterPortTimersInit                    CODE 00002CDE
-        vMBMasterPortTimersT35Enable               CODE 00002D10
-        vMBMasterPortTimersConvertDelayEnable      CODE 00002D34
-        vMBMasterPortTimersRespondTimeoutEnable    CODE 00002D56
-        vMBMasterPortTimersDisable                 CODE 00002D78
-        Timer0Isr                                  CODE 00002D96
+        prvvTIMERExpiredISR                        CODE 00002CDC
+        xMBMasterPortTimersInit                    CODE 00002CE8
+        vMBMasterPortTimersT35Enable               CODE 00002D1A
+        vMBMasterPortTimersConvertDelayEnable      CODE 00002D3E
+        vMBMasterPortTimersRespondTimeoutEnable    CODE 00002D60
+        vMBMasterPortTimersDisable                 CODE 00002D82
+        Timer0Isr                                  CODE 00002DA0
         TIMSK0                                     DATA 0000006E
         SREG                                       DATA 0000005F
         TCNT0                                      DATA 00000046
@@ -455,20 +455,20 @@ porttimer ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRob
         usTimerOCRADelta                           DATA 000003E6
 queue ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\queue.r90 )
 SN74HC573 ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\SN74HC573.r90 )
-        Sn_Output_KeyCode                          CODE 00002DF2
+        Sn_Output_KeyCode                          CODE 00002DFC
         PORTC                                      DATA 00000028
         PORTB                                      DATA 00000025
         Sn74hc573_Data                             DATA 000003E8
 tasks ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\tasks.r90 )
         pxCurrentTCB                               DATA 000003E9
-        xTaskGenericCreate                         CODE 00002E0E
-        vTaskDelayUntil                            CODE 00002F38
-        vTaskStartScheduler                        CODE 00002FCC
-        vTaskSuspendAll                            CODE 00003018
-        xTaskResumeAll                             CODE 00003024
-        xTaskGetTickCount                          CODE 00003106
-        vTaskIncrementTick                         CODE 00003122
-        vTaskSwitchContext                         CODE 0000327E
+        xTaskGenericCreate                         CODE 00002E18
+        vTaskDelayUntil                            CODE 00002F42
+        vTaskStartScheduler                        CODE 00002FD6
+        vTaskSuspendAll                            CODE 00003022
+        xTaskResumeAll                             CODE 0000302E
+        xTaskGetTickCount                          CODE 00003110
+        vTaskIncrementTick                         CODE 0000312C
+        vTaskSwitchContext                         CODE 00003288
         pxReadyTasksLists                          DATA 000003EB
         xDelayedTaskList1                          DATA 0000040F
         xDelayedTaskList2                          DATA 00000418
@@ -487,105 +487,105 @@ tasks ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-10
         xNumOfOverflows                            DATA 00000440
         uxTaskNumber                               DATA 00000441
         xNextTaskUnblockTime                       DATA 000001BB
-        prvIdleTask                                CODE 00003318
-        prvInitialiseTCBVariables                  CODE 00003320
-        prvInitialiseTaskLists                     CODE 0000337C
-        prvCheckTasksWaitingTermination            CODE 000033DE
-        prvAddCurrentTaskToDelayedList             CODE 000033E0
-        prvAllocateTCBAndStack                     CODE 0000344E
+        prvIdleTask                                CODE 00003322
+        prvInitialiseTCBVariables                  CODE 0000332A
+        prvInitialiseTaskLists                     CODE 00003386
+        prvCheckTasksWaitingTermination            CODE 000033E8
+        prvAddCurrentTaskToDelayedList             CODE 000033EA
+        prvAllocateTCBAndStack                     CODE 00003458
 User_Modbus_API ( E:\³ÂÊÀºÀ\¹¤×÷\Î¢ÐÍ»úÆ÷ÈË\ÏîÄ¿¹¤³Ì\ÊÖ³Ö²Ù×÷ºÐ\³ÌÐòÎÄ¼þ\eRobo-100eRobo-100HandheldOperationBox\IAR_WorkSpace\Debug\Obj\User_Modbus_API.r90 )
-        eMBMasterRegHoldingCB                      CODE 000034AA
+        eMBMasterRegHoldingCB                      CODE 000034B4
 ?__exit ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        __exit                                     CODE 0000355E
-        ?C_EXIT                                    CODE 0000355E
-        ?C_FUNCALL                                 CODE 0000355C
-        _exit                                      CODE 0000355C
-        exit                                       CODE 0000355C
+        __exit                                     CODE 00003568
+        ?C_EXIT                                    CODE 00003568
+        ?C_FUNCALL                                 CODE 00003566
+        _exit                                      CODE 00003566
+        exit                                       CODE 00003566
 ?RESET ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
         __program_start                            CODE 00000000
         ?RESET                                     CODE 00000000
 ?C_STARTUP ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?C_STARTUP                                 CODE 00003562
-        __RESTART                                  CODE 00003562
-        ?call_low_level_init                       CODE 0000356E
-        ?need_segment_init                         CODE 00003572
-        ?cstartup_call_main                        CODE 0000357A
+        ?C_STARTUP                                 CODE 0000356C
+        __RESTART                                  CODE 0000356C
+        ?call_low_level_init                       CODE 00003578
+        ?need_segment_init                         CODE 0000357C
+        ?cstartup_call_main                        CODE 00003584
 ?S_EC_MUL_L02 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?S_EC_MUL_L02                              CODE 00003586
+        ?S_EC_MUL_L02                              CODE 00003590
 ?US_SHR_L02 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?US_SHR_L02                                CODE 0000359A
+        ?US_SHR_L02                                CODE 000035A4
 ?L_SHL_L03 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?L_SHL_L03                                 CODE 000035A8
+        ?L_SHL_L03                                 CODE 000035B2
 ?UL_SHR_L03 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?UL_SHR_L03                                CODE 000035B6
+        ?UL_SHR_L03                                CODE 000035C0
 ?UL_DIVMOD_L03 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?UL_DIVMOD_L03                             CODE 000035BC
+        ?UL_DIVMOD_L03                             CODE 000035C6
 ?xV_SWITCH_L06 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?CV_SWITCH_L06                             CODE 00003614
-        ?SV_SWITCH_L06                             CODE 0000361C
-        ?LV_SWITCH_L06                             CODE 00003628
+        ?CV_SWITCH_L06                             CODE 0000361E
+        ?SV_SWITCH_L06                             CODE 00003626
+        ?LV_SWITCH_L06                             CODE 00003632
 ?PROLOGUE_L09 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?PROLOGUE14_L09                            CODE 0000369E
-        ?PROLOGUE13_L09                            CODE 000036A0
-        ?PROLOGUE12_L09                            CODE 000036A2
-        ?PROLOGUE11_L09                            CODE 000036A4
-        ?PROLOGUE10_L09                            CODE 000036A6
-        ?PROLOGUE9_L09                             CODE 000036A8
-        ?PROLOGUE8_L09                             CODE 000036AA
-        ?PROLOGUE7_L09                             CODE 000036AC
-        ?PROLOGUE6_L09                             CODE 000036AE
-        ?PROLOGUE5_L09                             CODE 000036B0
-        ?PROLOGUE4_L09                             CODE 000036B2
-        ?PROLOGUE3_L09                             CODE 000036B4
-        ?PROLOGUE2_L09                             CODE 000036B6
-        ?PROLOGUE1_L09                             CODE 000036B8
+        ?PROLOGUE14_L09                            CODE 000036A8
+        ?PROLOGUE13_L09                            CODE 000036AA
+        ?PROLOGUE12_L09                            CODE 000036AC
+        ?PROLOGUE11_L09                            CODE 000036AE
+        ?PROLOGUE10_L09                            CODE 000036B0
+        ?PROLOGUE9_L09                             CODE 000036B2
+        ?PROLOGUE8_L09                             CODE 000036B4
+        ?PROLOGUE7_L09                             CODE 000036B6
+        ?PROLOGUE6_L09                             CODE 000036B8
+        ?PROLOGUE5_L09                             CODE 000036BA
+        ?PROLOGUE4_L09                             CODE 000036BC
+        ?PROLOGUE3_L09                             CODE 000036BE
+        ?PROLOGUE2_L09                             CODE 000036C0
+        ?PROLOGUE1_L09                             CODE 000036C2
 ?EPILOGUE_B_L09 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?EPILOGUE_B14_L09                          CODE 000036BC
-        ?EPILOGUE_B13_L09                          CODE 000036BE
-        ?EPILOGUE_B12_L09                          CODE 000036C0
-        ?EPILOGUE_B11_L09                          CODE 000036C2
-        ?EPILOGUE_B10_L09                          CODE 000036C4
-        ?EPILOGUE_B9_L09                           CODE 000036C6
-        ?EPILOGUE_B8_L09                           CODE 000036C8
-        ?EPILOGUE_B7_L09                           CODE 000036CA
-        ?EPILOGUE_B6_L09                           CODE 000036CC
-        ?EPILOGUE_B5_L09                           CODE 000036CE
-        ?EPILOGUE_B4_L09                           CODE 000036D0
-        ?EPILOGUE_B3_L09                           CODE 000036D2
-        ?EPILOGUE_B2_L09                           CODE 000036D4
-        ?EPILOGUE_B1_L09                           CODE 000036D6
-        ?EPILOGUE_B0_L09                           CODE 000036D8
+        ?EPILOGUE_B14_L09                          CODE 000036C6
+        ?EPILOGUE_B13_L09                          CODE 000036C8
+        ?EPILOGUE_B12_L09                          CODE 000036CA
+        ?EPILOGUE_B11_L09                          CODE 000036CC
+        ?EPILOGUE_B10_L09                          CODE 000036CE
+        ?EPILOGUE_B9_L09                           CODE 000036D0
+        ?EPILOGUE_B8_L09                           CODE 000036D2
+        ?EPILOGUE_B7_L09                           CODE 000036D4
+        ?EPILOGUE_B6_L09                           CODE 000036D6
+        ?EPILOGUE_B5_L09                           CODE 000036D8
+        ?EPILOGUE_B4_L09                           CODE 000036DA
+        ?EPILOGUE_B3_L09                           CODE 000036DC
+        ?EPILOGUE_B2_L09                           CODE 000036DE
+        ?EPILOGUE_B1_L09                           CODE 000036E0
+        ?EPILOGUE_B0_L09                           CODE 000036E2
 ?REGISTER_CGREGR4_L10 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?Register_R4_is_cg_reg                     CODE 000036E2
+        ?Register_R4_is_cg_reg                     CODE 000036EC
 ?REGISTER_CGREGR5_L10 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?Register_R5_is_cg_reg                     CODE 000036E2
+        ?Register_R5_is_cg_reg                     CODE 000036EC
 ?REGISTER_CGREGR6_L10 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?Register_R6_is_cg_reg                     CODE 000036E2
+        ?Register_R6_is_cg_reg                     CODE 000036EC
 ?REGISTER_CGREGR7_L10 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?Register_R7_is_cg_reg                     CODE 000036E2
+        ?Register_R7_is_cg_reg                     CODE 000036EC
 ?REGISTER_CGREGR8_L10 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?Register_R8_is_cg_reg                     CODE 000036E2
+        ?Register_R8_is_cg_reg                     CODE 000036EC
 ?REGISTER_CGREGR9_L10 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?Register_R9_is_cg_reg                     CODE 000036E2
+        ?Register_R9_is_cg_reg                     CODE 000036EC
 ?REGISTER_CGREGR10_L10 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?Register_R10_is_cg_reg                    CODE 000036E2
+        ?Register_R10_is_cg_reg                    CODE 000036EC
 ?REGISTER_CGREGR11_L10 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?Register_R11_is_cg_reg                    CODE 000036E2
+        ?Register_R11_is_cg_reg                    CODE 000036EC
 ?REGISTER_CGREGR12_L10 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?Register_R12_is_cg_reg                    CODE 000036E2
+        ?Register_R12_is_cg_reg                    CODE 000036EC
 ?REGISTER_CGREGR13_L10 ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        ?Register_R13_is_cg_reg                    CODE 000036E2
+        ?Register_R13_is_cg_reg                    CODE 000036EC
 ?low_level_init ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        __low_level_init                           CODE 000036E2
+        __low_level_init                           CODE 000036EC
 ?memcpy ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
 ?memset ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        memset                                     CODE 000036E6
+        memset                                     CODE 000036F0
 ?segment_init ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        __segment_init                             CODE 00003714
-        __memclr                                   CODE 000036F8
-        __flashcpy                                 CODE 00003700
+        __segment_init                             CODE 0000371E
+        __memclr                                   CODE 00003702
+        __flashcpy                                 CODE 0000370A
 ?strncpy ( C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\avr\LIB\CLIB\cl3s-ec_mul-sf.r90 )
-        strncpy                                    CODE 00003748
+        strncpy                                    CODE 00003752
 ?FILLER_BYTES
 
 
@@ -619,7 +619,7 @@ Module                  CODE           DATA
 IO_Port                 48                    2
   + shared                                    4
 LCD12864             1 584                    1
-Menu                 4 458             4      2
+Menu                 4 468             4      2
 SN74HC573               28             1
 User_Modbus_API        178
 heap_1                 106           402
@@ -642,7 +642,7 @@ tasks                1 699            96
 N/A (command line)                   144
 N/A (alignment)
 ----------          ------     --    ---     --
-Total:              14 235     16    834     24
+Total:              14 245     16    834     24
   + common               4
 
 
@@ -660,11 +660,11 @@ INTVEC               CODE          00000000 - 00000003           4   com    1
 ?FILL2               CODE          00000034 - 00000043          10   rel    0
 ?FILL3               CODE          00000048 - 00000053           C   rel    0
 ?FILL4               CODE          0000005C - 0000007F          24   rel    0
-NEAR_F               CODE          00000080 - 00000F6D         EEE   rel    0
-SWITCH               CODE          00000F6E - 00001017          AA   rel    1
-CODE                 CODE          00001018 - 00003775        275E   rel    1
-INITTAB              CODE          00003776 - 00003781           C   rel    0
-NEAR_ID              CODE          00003782 - 000037AE          2D   rel    0
+NEAR_F               CODE          00000080 - 00000F77         EF8   rel    0
+SWITCH               CODE          00000F78 - 00001021          AA   rel    1
+CODE                 CODE          00001022 - 0000377F        275E   rel    1
+INITTAB              CODE          00003780 - 0000378B           C   rel    0
+NEAR_ID              CODE          0000378C - 000037B8          2D   rel    0
 ABSOLUTE             DATA               0000001F                     rel    0
                      DATA               00000020                   
                      DATA               00000021                   
@@ -691,7 +691,7 @@ NEAR_Z               DATA          000001BD - 00000441         285   rel    0
                 *                                      *
                 ****************************************
 
- 14 131 bytes of CODE memory (+ 16 absolute, 108 range fill )
+ 14 141 bytes of CODE memory (+ 16 absolute, 108 range fill )
     834 bytes of DATA memory (+ 24 absolute  )
 
 Errors: none
